@@ -5,9 +5,9 @@ import {EyeFilledIcon} from "../components/icons/EyeFilledIcon";
 import {EyeSlashFilledIcon} from "../components/icons/EyeSlashFilledIcon";
 import { useMemo, useState } from 'react';
 import DragAndDrop from '../components/dragDrop/DragAndDrop';
-import { createUSer } from '../services/api.service';
+import { createUSer, login } from '../services/api.service';
 
-function Register() {
+function Login() {
 
     const navigate = useNavigate();
 
@@ -31,8 +31,8 @@ function Register() {
 
       async function onSubmit(data) {
         try {
-            await createUSer(data);
-            navigate('/login')
+            const response = await login(data);
+            console.log(response.data.accessToken)
         } catch(err) {
             console.error(err);
         }
@@ -48,22 +48,6 @@ function Register() {
                     onValueChange={setValue} className='max-w-xs'
                     {...register("email", { required: true })} />
                     {errors.email && <span className="text-tiny text-danger">Email is required</span>}
-
-                <Input type="text" label="Username" 
-                    isClearable isInvalid={errors.username}
-                    color={errors.username ? "danger" : ""}
-                    variant={errors.username ? "bordered" : "variant"}
-                    onValueChange={setValue} className='max-w-xs'
-                    {...register("username", { required: true })} />
-                    {errors.username && <span className="text-tiny text-danger">Username is required</span>}
-
-                <Input type="text" label="Name" 
-                    isClearable isInvalid={errors.name}
-                    color={errors.name ? "danger" : ""}
-                    variant={errors.name ? "bordered" : "variant"}
-                    onValueChange={setValue} className='max-w-xs'
-                    {...register("name", { required: true })} />
-                    {errors.name && <span className="text-tiny text-danger">Name is required</span>}
 
                 <Input
                     label="Password"
@@ -85,15 +69,13 @@ function Register() {
                 />
                 {errors.password && <span className="text-tiny text-danger">Password is required</span>}
 
-                <DragAndDrop
-                    {...register('avatar')}
-                />
+                
                 <Button color="primary" size='lg' className='max-w-xs w-full' type='submit' variant="shadow">
-                    Register
+                    Login
                 </Button>  
             </div>
         </form>
       )
 }
 
-export default Register
+export default Login;

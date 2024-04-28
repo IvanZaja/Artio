@@ -1,5 +1,6 @@
 const User = require("../models/user.model");
 const mongoose = require("mongoose");
+const jwt = require('jsonwebtoken');
 
 module.exports.create = (req, res, next) => {
     User.create(req.body)
