@@ -1,14 +1,22 @@
 import './App.css'
-import NavBar from './components/ui/NavBar/navbar'
+import NavBar from './components/ui/NavBar/navbar';
+import { Route, Routes } from 'react-router-dom';
+import Home from './pages/Home';
+import Register from './pages/Register';
 
 function App() {
 
   return (
     <>
       <NavBar />
-      <h1>Hola</h1>
+      <main className=''>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/register' element={<Register />} />
+        </Routes>
+      </main>
     </>
   )
 }
 
-export default App
+export default App;

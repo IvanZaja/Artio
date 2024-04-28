@@ -21,7 +21,7 @@ function NavBar() {
     
           <NavbarContent className="hidden md:flex gap-4" justify="center">
             <NavbarItem>
-              <Link color="foreground" href="#">
+              <Link color="foreground" href="/">
                 Home
               </Link>
             </NavbarItem>
@@ -67,7 +67,7 @@ function NavBar() {
             <NavbarMenuItem className="divide-y">
               <div className="content-start divide-y">
                 <div className="flex flex-col mb-5">
-                  <Link color="foreground" className="text-3xl mt-5" href="#">
+                  <Link color="foreground" className="text-3xl mt-5" href="/">
                     Home
                   </Link>
                   <Link color="foreground" className="text-3xl mt-5" href="#">
