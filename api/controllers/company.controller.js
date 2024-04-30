@@ -1,32 +1,32 @@
-const User = require("../models/user.model");
-const mongoose = require("mongoose");
+const Company = require('../models/company.model');
+const mongoose = require('mongoose');
 const jwt = require('jsonwebtoken');
 
 module.exports.create = (req, res, next) => {
-    User.create(req.body)
-      .then((user) => {
-        res.json(user);
-      })
-      .catch((err) => {
-        if (err instanceof mongoose.Error.ValidationError) {
-          res.status(400).json(err.errors);
-        } else {
-          next(err);
-        }
-      });
-  };
+    Company.create(req.body)
+        .then((company) => {
+            res.json(company);
+        })
+        .catch((err) => {
+            if (err instanceof mongoose.Error.ValidationError) {
+                res.status(400).json(err.errors);
+            } else {
+                next(err);
+            }
+        })
+};
 
 module.exports.login = (req, res, next) => {
-    User.findOne({ email: req.body.email })
-        .then((user) => {
-            if (user) {
-                user
+    Company.findOne({ email: req.body.email })
+        .then((company) => {
+            if (company) {
+                company
                 .checkPassword(req.body.password)
                 .then((match) => {
                     if (match) {
                     const accessToken = jwt.sign(
                         {
-                        sub: user.id,
+                        sub: company.id,
                         exp: Date.now() / 1000 + 3600,
                         },
                         process.env.JWT_SECRET
@@ -43,8 +43,4 @@ module.exports.login = (req, res, next) => {
             }
         })
         .catch(next);
-};
-
-module.exports.profile = (req, res) => {
-    res.json(req.user);
 };

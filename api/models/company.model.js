@@ -1,13 +1,14 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const bcrypt = require('bcrypt');
 
 const schema = new Schema(
     {
-        company_name: {
+        name: {
             type: String,
             required: true,
         },
-        company_logo: {
+        logo: {
             type: String,
             default: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuoyBNDa5p75LeKVawcokEVRibDpDogr5lxkIbQG7vHg&s',
         },

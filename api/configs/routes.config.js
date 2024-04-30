@@ -1,9 +1,15 @@
 const express = require('express');
 const router = express.Router();
-const users = require("../controllers/users.controller");
+const hosts = require('../controllers/host.controller');
+const companies = require('../controllers/company.controller');
+const projects = require('../controllers/project.controller');
 
-router.post("/users", users.create);
-router.post("/login", users.login);
+router.post('/hosts', hosts.create);
+router.post('/hosts-login', hosts.login);
 
+router.post('/companies', companies.create);
+router.post('/companies-login', companies.login);
+
+router.post('/projects', projects.create);
 
 module.exports = router;
