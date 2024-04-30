@@ -45,6 +45,14 @@ module.exports.login = (req, res, next) => {
         .catch(next);
 };
 
-module.exports.profile = (req, res) => {
-    res.json(req.host);
+module.exports.details = (req, res, next) => {
+    Host.findById(req.params.id)
+      .then((host) => {
+        if (host) {
+          res.json(host);
+        } else {
+          res.status(404).json({ message: "Host not found" });
+        }
+      })
+      .catch(next);
 };

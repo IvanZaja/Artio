@@ -14,3 +14,15 @@ module.exports.create = (req, res, next) => {
             }
         });
 };
+
+module.exports.details = (req, res, next) => {
+    Project.findById(req.params.id)
+      .then((project) => {
+        if (project) {
+          res.json(project);
+        } else {
+          res.status(404).json({ message: "Project not found" });
+        }
+      })
+      .catch(next);
+};

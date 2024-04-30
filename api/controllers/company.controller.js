@@ -44,3 +44,15 @@ module.exports.login = (req, res, next) => {
         })
         .catch(next);
 };
+
+module.exports.details = (req, res, next) => {
+    Company.findById(req.params.id)
+      .then((company) => {
+        if (company) {
+          res.json(company);
+        } else {
+          res.status(404).json({ message: "Company not found" });
+        }
+      })
+      .catch(next);
+};
