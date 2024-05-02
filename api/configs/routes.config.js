@@ -1,18 +1,16 @@
 const express = require('express');
 const router = express.Router();
-const hosts = require('../controllers/host.controller');
-const companies = require('../controllers/company.controller');
+const auth = require("../middlewares/auth.middleware");
+const users = require('../controllers/user.controller');
 const projects = require('../controllers/project.controller');
 
-router.post('/hosts', hosts.create);
-router.post('/hosts-login', hosts.login);
-router.get('/hosts/:id', hosts.details);
-
-router.post('/companies', companies.create);
-router.post('/companies-login', companies.login);
-router.get('/companies/:id', companies.details);
+router.post('/user', users.create);
+router.post('/login', users.login);
+router.get('/user/:id', users.details);
+router.get('/profile', auth.checkAuth, users.profile);
 
 router.post('/projects', projects.create);
 router.get('/projects/:id', projects.details);
+router.get('/projects', projects.list);
 
 module.exports = router;

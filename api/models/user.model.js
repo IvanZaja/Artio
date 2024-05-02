@@ -8,10 +8,6 @@ const schema = new Schema(
             type: String,
             required: true,
         },
-        logo: {
-            type: String,
-            default: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuoyBNDa5p75LeKVawcokEVRibDpDogr5lxkIbQG7vHg&s',
-        },
         email: {
             type: String,
             required: true,
@@ -19,6 +15,15 @@ const schema = new Schema(
         password: {
             type: String,
             required: true,
+        },
+        avatar: {
+            type: String,
+            default: 'https://isobarscience-1bfd8.kxcdn.com/wp-content/uploads/2020/09/default-profile-picture1.jpg',
+        },
+        role: {
+            type: String,
+            enum: ["company", "host"],
+            default: "host"
         },
     },
     {
@@ -52,5 +57,5 @@ schema.method('checkPassword', function (password) {
     return bcrypt.compare(password, this.password)
 });
 
-const Company = mongoose.model('Company', schema);
-module.exports = Company;
+const User = mongoose.model('User', schema);
+module.exports = User;

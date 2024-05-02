@@ -17,7 +17,8 @@ const schema = new Schema (
         },
         images: {
             type: [String],
-            required: true
+            required: true,
+            default: 'https://isobarscience-1bfd8.kxcdn.com/wp-content/uploads/2020/09/default-profile-picture1.jpg',
         },
         goal: {
             type: Number,
@@ -27,11 +28,13 @@ const schema = new Schema (
             type: {
                 type: String,
                 enum: ["Point"],
-                required: true
+                required: true,
+                default:"Point"
             },
             coordinates: {
                 type: [Number],
-                required: true
+                required: true,
+                default: [0,0]
             },
         }
     },
@@ -40,6 +43,7 @@ const schema = new Schema (
         toJSON: {
             transform: (doc, ret) => {
                 ret.id = ret._id;
+                ret.location = ret.location.coordinates.reverse();
                 delete ret._id;
                 delete ret.__v;
                 return ret;

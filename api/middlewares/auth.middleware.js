@@ -1,6 +1,5 @@
 const jwt = require("jsonwebtoken");
-const Host = require("../models/host.model");
-const Company = require("../models/company.model");
+const User = require("../models/user.model");
 
 module.exports.checkAuth = (req, res, next) => {
   const [schema, token] = req.headers?.authorization.split(' ');
@@ -13,31 +12,19 @@ module.exports.checkAuth = (req, res, next) => {
 
         const sub = decoded.sub;
 
-        Host.findById(sub)
-          .then((host) => {
-            if (host) {
-              req.host = host;
+        User.findById(sub)
+          .then((user) => {
+            if (user) {
+              req.user = user;
               next();
             } else {
               res.status(401).json({ message: "Unauthorized" });
             }
           })
           .catch(next);
-
-        Company.findById(sub)
-        .then((company) => {
-          if (company) {
-            req.company = company;
-            next();
-          } else {
-            res.status(401).json({ message: "Unauthorized" });
-          }
-        })
-        .catch(next);
       });
       break;
     default:
       res.status(401).json({ message: `Unsupported authorization schema ${schema}` });
   }
-  
 };

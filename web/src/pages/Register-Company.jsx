@@ -7,7 +7,7 @@ import { useMemo, useState } from 'react';
 import DragAndDrop from '../components/dragDrop/DragAndDrop';
 import { createUSer } from '../services/api.service';
 
-function Register() {
+function RegisterCompany() {
 
     const navigate = useNavigate();
 
@@ -42,7 +42,7 @@ function Register() {
         <>
         <form onSubmit={handleSubmit(onSubmit)} className='mt-12'>
             <div className="flex flex-col items-center w-full flex-wrap md:flex-nowrap gap-4">
-                <Input type="text" label="Name" 
+                <Input type="text" label="Company name" 
                     isClearable isInvalid={errors.name}
                     color={errors.name ? "danger" : ""}
                     variant={errors.name ? "bordered" : "variant"}
@@ -82,15 +82,15 @@ function Register() {
                     {...register('avatar')}
                 />
                 <Button color="primary" size='lg' className='max-w-xs w-full' type='submit' variant="shadow">
-                    Register user
+                    Register company
                 </Button>  
             </div>
         </form>
-        
-        <div className='flex flex-row justify-center items-center mt-6 w-full flex-wrap md:flex-nowrap gap-4'>
-            <p>Are you a company?</p> 
 
-            <Link to='/register-company'>
+        <div className='flex flex-row justify-center items-center mt-6 w-full flex-wrap md:flex-nowrap gap-4'>
+            <p>Are you a user?</p> 
+            
+            <Link to='/register'>
                 <Button color="primary" variant="light">
                     Register here!
                 </Button>  
@@ -100,4 +100,4 @@ function Register() {
       )
 }
 
-export default Register;
+export default RegisterCompany;

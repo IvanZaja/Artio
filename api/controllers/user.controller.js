@@ -1,32 +1,32 @@
-const Host = require("../models/host.model");
+const User = require("../models/user.model");
 const mongoose = require("mongoose");
 const jwt = require('jsonwebtoken');
 
 module.exports.create = (req, res, next) => {
-    Host.create(req.body)
-      .then((host) => {
-        res.json(host);
-      })
-      .catch((err) => {
-        if (err instanceof mongoose.Error.ValidationError) {
-          res.status(400).json(err.errors);
-        } else {
-          next(err);
-        }
-      });
-  };
+    User.create(req.body)
+        .then((user) => {
+            res.json(user);
+        })
+        .catch((err) => {
+            if (err instanceof mongoose.Error.ValidationError) {
+                res.status(400).json(err.errors);
+            } else {
+                next(err);
+            }
+        })
+};
 
 module.exports.login = (req, res, next) => {
-    Host.findOne({ email: req.body.email })
-        .then((host) => {
-            if (host) {
-                host
+    User.findOne({ email: req.body.email })
+        .then((user) => {
+            if (user) {
+                user
                 .checkPassword(req.body.password)
                 .then((match) => {
                     if (match) {
                     const accessToken = jwt.sign(
                         {
-                        sub: host.id,
+                        sub: user.id,
                         exp: Date.now() / 1000 + 3600,
                         },
                         process.env.JWT_SECRET
@@ -46,13 +46,18 @@ module.exports.login = (req, res, next) => {
 };
 
 module.exports.details = (req, res, next) => {
-    Host.findById(req.params.id)
-      .then((host) => {
-        if (host) {
-          res.json(host);
+    User.findById(req.params.id)
+      .then((user) => {
+        if (user) {
+          res.json(user);
         } else {
-          res.status(404).json({ message: "Host not found" });
+          res.status(404).json({ message: "User not found" });
         }
       })
       .catch(next);
 };
+
+module.exports.profile = (req, res) => {
+    console.log(req.user)
+    res.json(req.user);
+  };

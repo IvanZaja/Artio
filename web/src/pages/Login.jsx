@@ -3,13 +3,13 @@ import { useNavigate } from 'react-router-dom'
 import {Button, Input} from "@nextui-org/react";
 import {EyeFilledIcon} from "../components/icons/EyeFilledIcon";
 import {EyeSlashFilledIcon} from "../components/icons/EyeSlashFilledIcon";
-import { useMemo, useState } from 'react';
-import DragAndDrop from '../components/dragDrop/DragAndDrop';
-import { createUSer, login } from '../services/api.service';
+import { useContext, useMemo, useState } from 'react';
+import AuthContext from '../contexts/auth.context';
 
 function Login() {
 
     const navigate = useNavigate();
+    const { doLogin } = useContext(AuthContext);
 
 // VALIDATIONS
     const [isVisible, setIsVisible] = useState(false);
@@ -31,8 +31,8 @@ function Login() {
 
       async function onSubmit(data) {
         try {
-            const response = await login(data);
-            console.log(response.data.accessToken)
+            await doLogin(data);
+            navigate("/");
         } catch(err) {
             console.error(err);
         }

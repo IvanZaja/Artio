@@ -1,7 +1,5 @@
-import { Button, Card, Image } from '@nextui-org/react'
-import React from 'react'
-import Ranking from '../components/ranking/ranking'
-import AnalyticsBtn from '../components/analytics-btn/AnalyticsBtn'
+import { Button } from '@nextui-org/react'
+import ProjectsList from '../components/projects/projects-list/projects-list'
 
 function Home() {
   return (
@@ -19,9 +17,7 @@ function Home() {
       <div className='h-96'>
         <img className='h-full object-cover' src='https://res.cloudinary.com/djfnazn3y/image/upload/v1714316631/Artio/dzrolfujdp820jk8id9u.webp'/>
       </div>
-      <div className='flex items-center mt-5'>
-        <AnalyticsBtn />
-      </div>
+      
       
     </>
   )

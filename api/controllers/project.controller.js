@@ -26,3 +26,26 @@ module.exports.details = (req, res, next) => {
       })
       .catch(next);
 };
+
+module.exports.list = (req, res, next) => {
+    const { lat, lng, limit = 20, page = 0 } = req.query;
+    const criterial = {};
+    if (lat && lng) {
+      criterial.location = {
+       $near: {
+         $geometry: {
+            type: "Point" ,
+           coordinates: [lng, lat]
+         },
+         $maxDistance: 15000,
+         $minDistance: 0
+       }
+     }
+    }
+    Project.find(criterial)
+      .sort({ _id: -1 })
+      .skip(page * limit)
+      .limit(limit)
+      .then((projects) => res.json(projects))
+      .catch(next);
+  };
