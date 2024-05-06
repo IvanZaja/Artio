@@ -48,8 +48,8 @@ export function login(data) {
     });
 }
 
-export function getProfile() {
-    return http.get("/profile");
+export function getProfile(userId = 'me') {
+    return http.get(`/user/${userId}`);
 }
 
 export function getProjects(params) {
@@ -62,4 +62,8 @@ export function getProject(id) {
 
 export function logout() {
     localStorage.removeItem("token");
+}
+
+export function getUsers(users) {
+    return http.get(`/user`, { users });
 }

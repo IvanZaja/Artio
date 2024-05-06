@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const User = require('./user.model')
 
 const schema = new Schema (
     {
@@ -36,6 +37,10 @@ const schema = new Schema (
                 required: true,
                 default: [0,0]
             },
+        },
+        owner: {
+            type: mongoose.Types.ObjectId,
+            ref: 'User'
         }
     },
     {
@@ -51,6 +56,8 @@ const schema = new Schema (
         },
     }
 ); 
+
+schema.index({ location: "2dsphere" });
 
 const Project = mongoose.model('Project', schema);
 module.exports = Project;

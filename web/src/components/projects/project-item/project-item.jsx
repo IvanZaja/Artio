@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function ProjectItem({ project }) {
   return (
     <Link to={`/projects/${project.id}`}>
-      <Card className="mx-5 py-4 lg:min-w-96">
+      <Card className="mx-5 mb-5 py-4 lg:max-w-96">
         <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
           <p className="text-tiny uppercase font-bold">{project.name}</p>
           <h4 className="font-bold text-large">{project.placeName}</h4>

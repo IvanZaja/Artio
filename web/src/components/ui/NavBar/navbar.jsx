@@ -7,7 +7,7 @@ import { NavLink } from "react-router-dom";
 const renderNavLinkActive = ({ isActive }) => isActive ? 'nav-link active' : 'nav-link';
 
 function NavBar() {
-  const { user, doLogout } = useContext(AuthContext);
+  const { userLoged, doLogout } = useContext(AuthContext);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     return (
@@ -40,14 +40,20 @@ function NavBar() {
             </NavbarItem>
           </NavbarContent>
     
-          {!user && (
-              <>
-                <li className="nav-item"><NavLink className={renderNavLinkActive} to="/register">Register</NavLink></li>
-                <li className="nav-item"><NavLink className={renderNavLinkActive} to="/Login">Login</NavLink></li>
-              </>
-            )}
-          {user && (
+          
+          
             <NavbarContent as="div" justify="end" className="hidden md:flex">
+            {!userLoged && (
+              <div className="hidden md:flex gap-4">
+              <NavbarItem>
+                <Link className="nav-item" color="foreground"><NavLink className={renderNavLinkActive} to="/register">Register</NavLink></Link>
+              </NavbarItem>
+              <NavbarItem>
+                <Link className="nav-item" color="foreground"><NavLink className={renderNavLinkActive} to="/Login">Login</NavLink></Link>
+              </NavbarItem>
+              </div>
+            )}
+            {userLoged && (
             <Dropdown placement="bottom-end">
               <DropdownTrigger>
                 <Avatar
@@ -55,25 +61,26 @@ function NavBar() {
                   as="button"
                   className="transition-transform"
                   color="secondary"
-                  name={user?.name}
+                  name={userLoged?.name}
                   size="md"
-                  src={user?.avatar}
+                  src={userLoged?.avatar}
                 />
               </DropdownTrigger>
               <DropdownMenu aria-label="Profile Actions" variant="flat">
                 <DropdownItem key="profile" className="h-14 gap-2">
                   <p className="font-semibold">Signed in as</p>
-                  <p className="font-semibold">{user?.email}</p>
+                  <p className="font-semibold">{userLoged?.email}</p>
                 </DropdownItem>
-                <DropdownItem href="#">Profile</DropdownItem>
+                <DropdownItem href={`/MyProfile`}>Profile</DropdownItem>
                 <DropdownItem href="#">Requests</DropdownItem>
                 <DropdownItem color="danger" onClick={doLogout}>
                   Log Out
                 </DropdownItem>
               </DropdownMenu>
             </Dropdown>
-          </NavbarContent>
           )}
+          </NavbarContent>
+          
           
           <NavbarMenu>
             <NavbarMenuItem className="divide-y">
@@ -89,8 +96,9 @@ function NavBar() {
                     Projects
                   </Link>
                 </div>
+                {userLoged && (
                 <div className="flex flex-col mb-5">
-                  <Link color="foreground" className="text-3xl mt-5" href="#">
+                  <Link color="foreground" className="text-3xl mt-5" href="/MyProfile">
                     Profile
                   </Link>
                   <Link color="foreground" className="text-3xl mt-5" href="#">
@@ -100,34 +108,32 @@ function NavBar() {
                     Log out
                   </Link>
                 </div>
+                )}
               </div>
               
               <div className="h-full divide-y">
-              {!user && (
-                <>
-                  <li className="nav-item"><NavLink className={renderNavLinkActive} to="/register">Register</NavLink></li>
-                  <li className="nav-item"><NavLink className={renderNavLinkActive} to="/Login">Login</NavLink></li>
-                </>
+              {!userLoged && (
+                <div className="flex flex-col gap-4 mt-5">
+                  <li className="nav-item text-3xl mt-5"><NavLink className={renderNavLinkActive} to="/register">Register</NavLink></li>
+                  <li className="nav-item text-3xl mt-5"><NavLink className={renderNavLinkActive} to="/login">Login</NavLink></li>
+                </div>
               )}
-              {user && (
+              {userLoged && (
                 <div className="flex gap-4 items-center mt-5">
-                
-                
                   <Avatar
                     isBordered
                     as="button"
                     className="transition-transform"
                     color="secondary"
-                    name={user?.name}
+                    name={userLoged?.name}
                     size="md"
-                    src={user?.avatar}
+                    src={userLoged?.avatar}
                   />
                   <div>
                     <p className="font-semibold">Signed in as</p>
-                    <p className="font-semibold">{user?.email}</p>
+                    <p className="font-semibold">{userLoged?.email}</p>
                   </div>
                 </div>
-              
               )}
               </div>
               

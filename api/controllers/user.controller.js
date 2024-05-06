@@ -1,6 +1,7 @@
 const User = require("../models/user.model");
 const mongoose = require("mongoose");
 const jwt = require('jsonwebtoken');
+const Project = require("../models/project.model");
 
 module.exports.create = (req, res, next) => {
     User.create(req.body)
@@ -46,18 +47,30 @@ module.exports.login = (req, res, next) => {
 };
 
 module.exports.details = (req, res, next) => {
-    User.findById(req.params.id)
-      .then((user) => {
-        if (user) {
-          res.json(user);
-        } else {
-          res.status(404).json({ message: "User not found" });
-        }
-      })
-      .catch(next);
+    const userId = req.params.id;
+    if (userId === 'me') {
+        res.json(req.user);
+    } else {
+        User.findById(req.params.id)
+            .then((user) => {
+                if (user) {
+                res.json(user);
+                } else {
+                res.status(404).json({ message: "User not found" });
+                }
+            })
+            .catch(next);
+    }
 };
 
-module.exports.profile = (req, res) => {
-    console.log(req.user)
-    res.json(req.user);
-  };
+module.exports.allUsers = (req, res, next) => {
+    User.find()
+        .then((users) => {
+            if (users) {
+                res.json(users);
+                } else {
+                res.status(404).json({ message: "User not found" });
+                }
+        })
+        .catch(next);
+}

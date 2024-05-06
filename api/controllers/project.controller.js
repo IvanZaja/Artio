@@ -1,8 +1,9 @@
 const Project = require('../models/project.model');
+const User = require("../models/user.model");
 const mongoose = require('mongoose');
 
 module.exports.create = (req, res, next) => {
-    Project.create(req.body)
+    Project.create({ name: req.body.name, description: req.body.description, placeName: req.body.placeName, goal: req.body.goal, owner: req.user.id })
         .then((project) => {
             res.json(project);
         })
@@ -28,14 +29,16 @@ module.exports.details = (req, res, next) => {
 };
 
 module.exports.list = (req, res, next) => {
-    const { lat, lng, limit = 20, page = 0 } = req.query;
+    const { lat, lng, category } = req.query;
     const criterial = {};
+    if (category) criterial.category = category;
+
     if (lat && lng) {
       criterial.location = {
        $near: {
          $geometry: {
             type: "Point" ,
-           coordinates: [lng, lat]
+            coordinates: [lng, lat]
          },
          $maxDistance: 15000,
          $minDistance: 0
@@ -44,8 +47,6 @@ module.exports.list = (req, res, next) => {
     }
     Project.find(criterial)
       .sort({ _id: -1 })
-      .skip(page * limit)
-      .limit(limit)
       .then((projects) => res.json(projects))
       .catch(next);
   };

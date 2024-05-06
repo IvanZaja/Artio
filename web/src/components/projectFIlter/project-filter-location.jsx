@@ -9,7 +9,7 @@ function ProjectFilterLocation({ location }) {
         className="max-w-xs mx-5 py-4 lg:min-w-96"
       >
         {location.map((project) => (
-          <SelectItem key={project.value} value={project.value}>
+          <SelectItem key={project.id} value={project.value}>
             {project.placeName}
           </SelectItem>
         ))}

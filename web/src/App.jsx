@@ -8,6 +8,8 @@ import RegisterCompany from './pages/Register-Company';
 import Projects from './pages/Projects';
 import CreateProject from './pages/Create-Project';
 import ProjectDetails from './pages/Project-Details';
+import MyProfile from './pages/My-Profile';
+import HostProfile from './pages/HostProfile';
 
 function App() {
 
@@ -23,7 +25,8 @@ function App() {
           <Route path='/projects' element={<Projects />} />
           <Route path='/create-project' element={<CreateProject />} />
           <Route path='/projects/:id' element={<ProjectDetails />} />
-
+          <Route path='/MyProfile' element={<MyProfile />} />
+          <Route path='/user/:id' element={<HostProfile />} />
         </Routes>
       </main>
     </>

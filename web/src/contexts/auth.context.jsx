@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 const AuthContext = createContext();
 
 export function AuthContextProvider({ children }) {
-  const [user, setUser] = useState();
+  const [userLoged, setUser] = useState();
   const navigate = useNavigate();
 
   async function fetchProfile() {
@@ -36,7 +36,7 @@ export function AuthContextProvider({ children }) {
   }
 
   const value = {
-    user,
+    userLoged,
     doLogin,
     doLogout,
   };

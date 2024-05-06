@@ -13,6 +13,12 @@ module.exports.checkAuth = (req, res, next) => {
         const sub = decoded.sub;
 
         User.findById(sub)
+          .populate({
+            path: 'projects', 
+            populate: {
+                path: 'owner'
+            }
+          })
           .then((user) => {
             if (user) {
               req.user = user;
