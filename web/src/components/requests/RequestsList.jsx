@@ -5,7 +5,7 @@ import AuthContext from "../../contexts/auth.context";
 import * as ArtioApi from '../../services/api.service';
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-import { updateRequest } from '../services/api.service';
+import { updateRequest } from '../../services/api.service';
 
 function RequestsList({ status }) {
 
@@ -74,6 +74,28 @@ function RequestsList({ status }) {
         </Listbox>
       </ListboxWrapper>
       <div className="w-full">
+        {userLoged?.requests?.filter(request => request.id === `${selectedValue}`).map((request) => (
+          <div className="w-full border-small px-1 py-2 rounded-small border-default-200 dark:border-default-100" key={request.id}>
+            <p>{request.title}</p>
+            <p>{request.message}</p>
+            <div>
+              {projects.filter(project => project.id === `${request.project}`).map((project) => (
+                <div key={project.id}>
+                  <p>{project.name}</p>
+                  <p>{project.goal} €</p>
+                  <div className="mx-3">
+                    {hosts.filter(host => host.id === `${project.owner}`).map((owner) => (
+                      <div key={owner.id} className="flex gap-3">
+                        <Avatar src={owner.avatar}/>
+                        <p>{owner.name}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
         {userLoged?.companyRequests?.filter(request => request.id === `${selectedValue}`).map((request) => (
             <div className="w-full border-small px-1 py-2 rounded-small border-default-200 dark:border-default-100" key={request.id}>
               <p>{request.title}</p>
@@ -95,8 +117,8 @@ function RequestsList({ status }) {
                 ))}
               </div>
               <div className="flex gap-3 my-3 mx-3">
-                <Button color="success" onClick={() => {request.status === 'Accepted'}}>Accept</Button>
-                <Button color="danger" onClick={() => {request.status === 'Rejected'}} >Reject</Button>
+                <Button color="success">Accept</Button>
+                <Button color="danger">Reject</Button>
               </div>
             </div>
           ))}

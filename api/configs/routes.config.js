@@ -15,6 +15,6 @@ router.get('/projects/:id', projects.details);
 router.get('/projects', projects.list);
 
 router.post('/requests', auth.checkAuth, requests.create);
-router.update('/requests/:id', auth.checkAuth, requests.update);
+//router.update('/requests/:id', auth.checkAuth, requests.update);
 
 module.exports = router;

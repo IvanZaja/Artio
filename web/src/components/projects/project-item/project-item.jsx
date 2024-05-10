@@ -1,22 +1,25 @@
-import {Card, CardHeader, CardBody, Image} from "@nextui-org/react";
+import {Card, CardHeader, CardBody, Image, CardFooter, Button} from "@nextui-org/react";
 import { Link } from "react-router-dom";
 
 function ProjectItem({ project }) {
   return (
     <Link to={`/projects/${project.id}`}>
-      <Card className="mx-5 mb-5 py-4 lg:max-w-96">
-        <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
-          <p className="text-tiny uppercase font-bold">{project.name}</p>
-          <h4 className="font-bold text-large">{project.placeName}</h4>
-        </CardHeader>
-        <CardBody className="overflow-visible py-2">
-          <Image
-            alt="Card background"
-            className="object-cover rounded-xl max-h-60"
-            src={project.images[0]}
-            width={360}
-          />
-        </CardBody>
+      <Card isFooterBlurred className="w-[400px] h-[250px] col-span-12 mb-5 sm:col-span-5">
+        <Image
+          removeWrapper
+          alt="Card example background"
+          className="z-0 w-full h-full scale-125 -translate-y-6 object-cover"
+          src={project.coverImg}
+        />
+        <CardFooter className="absolute bg-white/30 bottom-0 border-t-1 border-zinc-100/50 z-10 justify-between">
+          <div className="w-4/5">
+            <h4 className="text-black w-4/5 font-medium text-xl mb-3 truncate text-ellipsis overflow-hidden">{project.placeName}</h4>
+            <p className="text-black text-tiny truncate text-ellipsis overflow-hidden">{project.name}</p>
+          </div>
+          <Button className="text-tiny" color="primary" radius="full" size="sm">
+            Details
+          </Button>
+        </CardFooter>
       </Card>
     </Link>
   )

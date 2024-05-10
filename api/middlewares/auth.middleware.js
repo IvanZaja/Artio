@@ -20,7 +20,7 @@ module.exports.checkAuth = (req, res, next) => {
             }
           })
           .populate({
-            path: 'projects', 
+            path: 'projectCollaborators', 
             populate: {
                 path: 'collaborators'
             }

@@ -3,7 +3,7 @@ const User = require("../models/user.model");
 const mongoose = require('mongoose');
 
 module.exports.create = (req, res, next) => {
-    Project.create({ name: req.body.name, description: req.body.description, placeName: req.body.placeName, goal: req.body.goal, owner: req.user.id })
+    Project.create({ name: req.body.name, description: req.body.description, beneficts: req.body.beneficts, additionalDetails: req.body.additionalDetails, images: req.body.images, coverImg: req.body.coverImg, country: req.body.country, placeName: req.body.placeName, goal: req.body.goal, owner: req.user.id, collaborators: req.body.collaborators})
         .then((project) => {
             res.json(project);
         })
@@ -29,7 +29,7 @@ module.exports.details = (req, res, next) => {
 };
 
 module.exports.list = (req, res, next) => {
-    const { lat, lng, category } = req.query;
+    const { lat, lng, category, limit = 6, page = 0 } = req.query;
     const criterial = {};
     if (category) criterial.category = category;
 
@@ -47,6 +47,8 @@ module.exports.list = (req, res, next) => {
     }
     Project.find(criterial)
       .sort({ _id: -1 })
+      .skip(page * limit)
+      .limit(limit)
       .then((projects) => res.json(projects))
       .catch(next);
   };

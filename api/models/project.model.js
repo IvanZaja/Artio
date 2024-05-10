@@ -62,6 +62,10 @@ const schema = new Schema (
         collaborators: {
             type: [mongoose.Types.ObjectId],
             ref: 'User'
+        },
+        investors: {
+            type: [mongoose.Types.ObjectId],
+            ref: 'User'
         }
     },
     {

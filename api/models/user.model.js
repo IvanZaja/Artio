@@ -61,21 +61,34 @@ schema.method('checkPassword', function (password) {
 });
 
 schema.virtual('projects', {
-    ref: 'Project', // Modelo
-    localField: '_id', // Mi campo que tiene la N
-    foreignField: 'owner', // El nombre del campo del modelo "Channel"
+    ref: 'Project', 
+    localField: '_id', 
+    foreignField: 'owner', 
+})
+
+schema.virtual('projectCollaborators', {
+    ref: 'Project', 
+    localField: '_id', 
+    foreignField: 'collaborators', 
 })
 
 schema.virtual('requests', {
-    ref: 'Request', // Modelo
-    localField: '_id', // Mi campo que tiene la N
-    foreignField: 'owner', // El nombre del campo del modelo "Channel"
+    ref: 'Request', 
+    localField: '_id', 
+    foreignField: 'owner', 
 })
 
 schema.virtual('companyRequests', {
-    ref: 'Request', // Modelo
-    localField: '_id', // Mi campo que tiene la N
-    foreignField: 'company', // El nombre del campo del modelo "Channel"
+    ref: 'Request', 
+    localField: '_id', 
+    foreignField: 'company', 
 })
+
+schema.virtual('projectInvestors', {
+    ref: 'Project', 
+    localField: '_id', 
+    foreignField: 'investors', 
+})
+
 const User = mongoose.model('User', schema);
 module.exports = User;

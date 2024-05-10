@@ -52,9 +52,6 @@ function NavBar() {
               </Link>
             </NavbarItem>
           </NavbarContent>
-    
-          
-          
             <NavbarContent as="div" justify="end" className="hidden md:flex">
             {!userLoged && (
               <div className="hidden md:flex gap-4">

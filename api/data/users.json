@@ -1,5 +1,142 @@
 [
     {
-       "name": "Pedro" 
+        "name": "Ivan",
+        "email": "ivan@example.com",
+        "password": "123456789",
+        "avatar": "https://res.cloudinary.com/djfnazn3y/image/upload/v1715334949/Artio/users/s5bkmxt4jzxnqyyhhmlb.jpg",
+        "role": "host" 
+    },
+    {
+        "name": "Pedro",
+        "email": "pedro@example.com",
+        "password": "123456789",
+        "avatar": "https://res.cloudinary.com/djfnazn3y/image/upload/v1715334950/Artio/users/d33eiqi1mjgqs4nvczet.png",
+        "role": "host" 
+    },
+    {
+        "name": "Juan",
+        "email": "juan@example.com",
+        "password": "123456789",
+        "avatar": "https://res.cloudinary.com/djfnazn3y/image/upload/v1715334950/Artio/users/rmz5wivppa3ayfypx4dg.jpg",
+        "role": "host" 
+    },
+    {
+        "name": "Monica",
+        "email": "monica@example.com",
+        "password": "123456789",
+        "avatar": "https://res.cloudinary.com/djfnazn3y/image/upload/v1715334950/Artio/users/fgavmzxaulpqwgg95x74.avif",
+        "role": "host" 
+    },
+    {
+        "name": "Susana",
+        "email": "susana@example.com",
+        "password": "123456789",
+        "avatar": "https://res.cloudinary.com/djfnazn3y/image/upload/v1715334950/Artio/users/ulmerq4betkeabpunnxt.jpg",
+        "role": "host" 
+    },
+    {
+        "name": "Jose",
+        "email": "jose@example.com",
+        "password": "123456789",
+        "avatar": "https://res.cloudinary.com/djfnazn3y/image/upload/v1715334950/Artio/users/m60ixvx2amlu0eqdzwty.jpg",
+        "role": "host" 
+    },
+    {
+        "name": "Carla",
+        "email": "carla@example.com",
+        "password": "123456789",
+        "avatar": "https://res.cloudinary.com/djfnazn3y/image/upload/v1715334950/Artio/users/kioe5rhuq1imzriuzt6b.jpg",
+        "role": "host" 
+    },
+    {
+        "name": "Noah",
+        "email": "noah@example.com",
+        "password": "123456789",
+        "avatar": "https://res.cloudinary.com/djfnazn3y/image/upload/v1715334950/Artio/users/ojvre7ms4oxcdtwdfxzp.jpg",
+        "role": "host" 
+    },
+    {
+        "name": "Steven",
+        "email": "steven@example.com",
+        "password": "123456789",
+        "avatar": "https://res.cloudinary.com/djfnazn3y/image/upload/v1715334949/Artio/users/lcqf4ws0rmkcnjj1nsdw.jpg",
+        "role": "host" 
+    },
+    {
+        "name": "Toni",
+        "email": "toni@example.com",
+        "password": "123456789",
+        "avatar": "https://res.cloudinary.com/djfnazn3y/image/upload/v1715334950/Artio/users/c1kwds6gklwulqnxiyif.avif",
+        "role": "host" 
+    },
+    {
+        "name": "Apple",
+        "email": "apple@example.com",
+        "password": "123456789",
+        "avatar": "https://res.cloudinary.com/djfnazn3y/image/upload/v1714501798/Artio/logos/rst85qzd2iesdtmdle3m.webp",
+        "role": "company" 
+    },
+    {
+        "name": "Uber",
+        "email": "uber@example.com",
+        "password": "123456789",
+        "avatar": "https://res.cloudinary.com/djfnazn3y/image/upload/v1714501798/Artio/logos/tkrfcz2sjvpzye9sbdtf.png",
+        "role": "company" 
+    },
+    {
+        "name": "Tesla",
+        "email": "tesla@example.com",
+        "password": "123456789",
+        "avatar": "https://res.cloudinary.com/djfnazn3y/image/upload/v1714501798/Artio/logos/zsze3h7ko9b6wilbt5nk.webp",
+        "role": "company" 
+    },
+    {
+        "name": "Meta",
+        "email": "meta@example.com",
+        "password": "123456789",
+        "avatar": "https://res.cloudinary.com/djfnazn3y/image/upload/v1714501797/Artio/logos/jqmykpm6xr3rm1xn6spf.webp",
+        "role": "company" 
+    },
+    {
+        "name": "Spotify",
+        "email": "spotify@example.com",
+        "password": "123456789",
+        "avatar": "https://res.cloudinary.com/djfnazn3y/image/upload/v1714501797/Artio/logos/grlvjnkobay35wjtiryc.png",
+        "role": "company" 
+    },
+    {
+        "name": "Microsoft",
+        "email": "microsoft@example.com",
+        "password": "123456789",
+        "avatar": "https://res.cloudinary.com/djfnazn3y/image/upload/v1714501797/Artio/logos/vwi8soljsrgs7cqdxvha.png",
+        "role": "company" 
+    },
+    {
+        "name": "Riot Games",
+        "email": "riot@example.com",
+        "password": "123456789",
+        "avatar": "https://res.cloudinary.com/djfnazn3y/image/upload/v1714501797/Artio/logos/ju4h2pqlwhlqt3wk0sds.jpg",
+        "role": "company" 
+    },
+    {
+        "name": "Google",
+        "email": "google@example.com",
+        "password": "123456789",
+        "avatar": "https://res.cloudinary.com/djfnazn3y/image/upload/v1714501797/Artio/logos/zaczseuiq0ilzwzumy8f.webp",
+        "role": "company" 
+    },
+    {
+        "name": "McDonald's",
+        "email": "mcdonalds@example.com",
+        "password": "123456789",
+        "avatar": "https://res.cloudinary.com/djfnazn3y/image/upload/v1714501797/Artio/logos/ixsoiwmsakedva4yebka.webp",
+        "role": "company" 
+    },
+    {
+        "name": "Cabify",
+        "email": "cabify@example.com",
+        "password": "123456789",
+        "avatar": "https://res.cloudinary.com/djfnazn3y/image/upload/v1714501797/Artio/logos/rbyzfpe5rn0hkluyyouf.webp",
+        "role": "company" 
     }
 ]

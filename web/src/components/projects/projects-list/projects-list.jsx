@@ -8,7 +8,7 @@ import AuthContext from '../../../contexts/auth.context';
 import { Link } from "react-router-dom";
 
 
-function ProjectsList({ category, lat, lng, onUpdateProjects, onHandleLocation }) {
+function ProjectsList({ category, lat, lng, onUpdateProjects, onHandleLocation, limit, page }) {
   const [projects, setProjects] = useState([]);
   const { userLoged } = useContext(AuthContext);
 
@@ -22,8 +22,10 @@ function ProjectsList({ category, lat, lng, onUpdateProjects, onHandleLocation }
           query.lat = lat;
           query.lat = lat;
         }
+        if (limit) query.limit = limit;
+        if (page) query.page = page;
 
-        const { data: projects } = await ArtioApi.getProjects();
+        const { data: projects } = await ArtioApi.getProjects(query);
         setProjects(projects);
         onUpdateProjects(projects);
       } catch (error) {
@@ -31,7 +33,7 @@ function ProjectsList({ category, lat, lng, onUpdateProjects, onHandleLocation }
       }
     }
     fetch();
-  }, [lat, lng])
+  }, [lat, lng, limit, page])
 
   return (
     
@@ -44,11 +46,14 @@ function ProjectsList({ category, lat, lng, onUpdateProjects, onHandleLocation }
           </Link>
         )}
       <ProjectFilterLocation location={projects} onHandleLocation={onHandleLocation} />
+      <div className="mx-3 gap-3">
         {projects.map((project) => (
           <div key={project.id}>
             <ProjectItem project={project}/>
           </div>
         ))}
+      </div>
+        
       </ScrollShadow>
     </div>
     

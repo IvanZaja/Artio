@@ -44,7 +44,7 @@ function Projects() {
   return (
     <div className='flex relative items-center mt-5'>
       <div className=''>
-        <ProjectsList lat={1} lng={1} onUpdateProjects={handleUpdateProjects} onHandleLocation={handleLocation} />
+        <ProjectsList lat={1} lng={1} limit={20} page={0} onUpdateProjects={handleUpdateProjects} onHandleLocation={handleLocation} />
       </div>
       <div className="h-screen w-screen">
         {location ? <Map className='h-full w-full z-0' center={{lat: parseFloat(location.lat), lng: parseFloat(location.lng)}} markers={locations} /> : <p className='animate-pulse text-center'>SELECCIONA UN PROYECTO</p>}

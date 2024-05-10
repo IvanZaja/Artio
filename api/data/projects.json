@@ -6,15 +6,16 @@
         "additionalDetails": "Developed by the Association for Research and Integral Development (AIDER), an environmental conservation NGO, in collaboration with the Peruvian government and seven native communities, Ucayali Community Rainforest aims to protect 127,004 hectares of forests in the Peruvian Amazon. The project receives funding from the International Tropical Timber Organization (ITTO), an intergovernmental organization promoting sustainable timber trade.",
         "placeName": "Ucayali Community Rainforests",
         "country": "Peru",
-        "coverImg": "",
-        "images": [""],
+        "coverImg": "https://res.cloudinary.com/djfnazn3y/image/upload/v1715334779/Artio/projects/Ucayali%20Community%20Rainforests/zjy00iynaz9uj1wxhfae.webp",
+        "images": ["https://res.cloudinary.com/djfnazn3y/image/upload/v1715334784/Artio/projects/Ucayali%20Community%20Rainforests/bvdzwly4bs6ocqaptnbn.webp", "https://res.cloudinary.com/djfnazn3y/image/upload/v1715334779/Artio/projects/Ucayali%20Community%20Rainforests/dhziim0gahsxmlvi5hzc.webp", "https://res.cloudinary.com/djfnazn3y/image/upload/v1715334779/Artio/projects/Ucayali%20Community%20Rainforests/d2i2edkqsxm7qfmqyyng.webp", "https://res.cloudinary.com/djfnazn3y/image/upload/v1715334779/Artio/projects/Ucayali%20Community%20Rainforests/i78kzfhwu8ze6baim7ql.webp"],
         "goal": 4800765,
         "location": {
             "type": "Point",
             "coordinates": [-7.755193509385921, -76.11635388855163]
         },
-        "owner": "",
-        "collaborators": [""]
+        "owner": "663e00b0759f8b986ac2c8fd",
+        "collaborators": ["663e00b0759f8b986ac2c900", "663e00b0759f8b986ac2c904", "663e00b0759f8b986ac2c903", "663e00b0759f8b986ac2c906"],
+        "investors": ["663e00b0759f8b986ac2c907", "663e00b0759f8b986ac2c90d"]
     },
     {
         "name": "Building an ecological corridor in a biodiversity hotspot",
@@ -23,15 +24,16 @@
         "additionalDetails": "The Serra do Mar Corridor, stretching between Paraná, São Paulo and Rio de Janeiro, includes the largest and best-preserved contiguous stretch of the Atlantic Forest. The project aims to restore land within this corridor that has suffered from centuries of deforestation and help create an ecological corridor between the forest’s two largest continuums. To date, the project has restored 70 hectares, and additional 400 hectares will be restored in 2024.",
         "placeName": "Águas Da Mata Atlântica",
         "country": "Brazil",
-        "coverImg": "",
-        "images": [""],
+        "coverImg": "https://res.cloudinary.com/djfnazn3y/image/upload/v1715334780/Artio/projects/Aguas%20Da%20Mata/emz4kcgwpz0rznfzdluz.jpg",
+        "images": ["https://res.cloudinary.com/djfnazn3y/image/upload/v1715334781/Artio/projects/Aguas%20Da%20Mata/mma41t34jxr7neqmrx5r.jpg", "https://res.cloudinary.com/djfnazn3y/image/upload/v1715334781/Artio/projects/Aguas%20Da%20Mata/hmrsczvdipqzwlsihzlf.jpg", "https://res.cloudinary.com/djfnazn3y/image/upload/v1715334781/Artio/projects/Aguas%20Da%20Mata/jrq3ne0svs17ae3oyexd.webp", "https://res.cloudinary.com/djfnazn3y/image/upload/v1715334780/Artio/projects/Aguas%20Da%20Mata/qdanwasli681vfxwhk0w.jpg"],
         "goal": 5000000,
         "location": {
             "type": "Point",
             "coordinates": [-23.79574083314726, -46.766483499556216]
         },
-        "owner": "",
-        "collaborators": [""]
+        "owner": "663e00b0759f8b986ac2c904",
+        "collaborators": ["663e00b0759f8b986ac2c8fd", "663e00b0759f8b986ac2c8fe", "663e00b0759f8b986ac2c903"],
+        "investors": ["663e00b0759f8b986ac2c907", "663e00b0759f8b986ac2c90d"]
     },
     {
         "name": "Reconnecting forest fragments",
@@ -40,15 +42,16 @@
         "additionalDetails": "Once a continuous expanse, Mata Atlântica now survives in isolated patches. These fragmented islands, surrounded by urbanization and agriculture, sever wildlife corridors, causing genetic isolation and reducing biodiversity. The project will restore a once-dense rainforest, creating corridors across two national parks, Parque Monte Pascoal and Parque Pau Brasil, in a macro-region that spans 40,000 hectares.",
         "placeName": "Corredores Pau Brasil",
         "country": "Brazil",
-        "coverImg": "",
-        "images": [""],
+        "coverImg": "https://res.cloudinary.com/djfnazn3y/image/upload/v1715334784/Artio/projects/Corredores%20Pau%20Brasil/qwewzz9ugd68j3c0v67w.jpg",
+        "images": ["https://res.cloudinary.com/djfnazn3y/image/upload/v1715334784/Artio/projects/Corredores%20Pau%20Brasil/ie61pn5vyohwdvkxrqka.jpg", "https://res.cloudinary.com/djfnazn3y/image/upload/v1715334784/Artio/projects/Corredores%20Pau%20Brasil/na5onrzokisekthfmbpm.jpg", "https://res.cloudinary.com/djfnazn3y/image/upload/v1715334784/Artio/projects/Corredores%20Pau%20Brasil/hqlr6ubf8wtept2sicry.jpg", "https://res.cloudinary.com/djfnazn3y/image/upload/v1715334784/Artio/projects/Corredores%20Pau%20Brasil/t0fw2yilluhifckiayyj.jpg"],
         "goal": 3000000,
         "location": {
             "type": "Point",
             "coordinates": [-16.4786797561649, -39.44253451290777]
         },
-        "owner": "",
-        "collaborators": [""]
+        "owner": "663e00b0759f8b986ac2c904",
+        "collaborators": ["663e00b0759f8b986ac2c8fd", "663e00b0759f8b986ac2c8fe", "663e00b0759f8b986ac2c903"],
+        "investors": ["663e00b0759f8b986ac2c907", "663e00b0759f8b986ac2c90d"]
     },
     {
         "name": "The countries' largest floodplain restoration footprint",
@@ -57,15 +60,16 @@
         "additionalDetails": "The project aims to restore marginal farmland at the convergence of the Red and Black Rivers between two Wildlife Management Areas, creating critical linkages to Catahoula Lake, an internationally recognized RAMSAR wetland. Covering more than 2,400 hectares, or 5,400 football fields, Avahoula represents the largest floodplain restoration project in the United States and is protected by a permanent conservation easement. ",
         "placeName": "Avahoula",
         "country": "United States",
-        "coverImg": "",
-        "images": [""],
+        "coverImg": "https://res.cloudinary.com/djfnazn3y/image/upload/v1715334781/Artio/projects/Avahoula/p53yd46dzw2fid2atuol.jpg",
+        "images": ["https://res.cloudinary.com/djfnazn3y/image/upload/v1715334781/Artio/projects/Avahoula/efrccgn6nnnjxireqdw6.jpg", "https://res.cloudinary.com/djfnazn3y/image/upload/v1715334781/Artio/projects/Avahoula/jomy4ydj43f68zkkdau1.jpg", "https://res.cloudinary.com/djfnazn3y/image/upload/v1715334781/Artio/projects/Avahoula/zbykbyutbec5g32wjjsk.jpg", "https://res.cloudinary.com/djfnazn3y/image/upload/v1715334781/Artio/projects/Avahoula/gyjtq1khl4gdlaslqlsc.jpg"],
         "goal": 8000000,
         "location": {
             "type": "Point",
             "coordinates": [33.99739688548172, -90.99738053719345]
         },
-        "owner": "",
-        "collaborators": [""]
+        "owner": "663e00b0759f8b986ac2c8fd",
+        "collaborators": ["663e00b0759f8b986ac2c901", "663e00b0759f8b986ac2c902", "663e00b0759f8b986ac2c8fe"],
+        "investors": ["663e00b0759f8b986ac2c907", "663e00b0759f8b986ac2c90d"]
     },
     {
         "name": "Collaborating with local landowners",
@@ -74,15 +78,16 @@
         "additionalDetails": "The project will compensate landowners for restoring bottomland hardwood forests, ensuring permanence through a series of conservation easements. The initial phase includes four distinct properties spanning 570 hectares. In 2024, phase two will include reforesting an additional 650 hectares. The project is part of a coalition of partners that hopes to restore and protect two million acres of forest in the Lower Mississippi Alluvial Valley, pictured here, over the next two decades.",
         "placeName": "Flyway Forests",
         "country": "United States",
-        "coverImg": "",
-        "images": [""],
+        "coverImg": "https://res.cloudinary.com/djfnazn3y/image/upload/v1715334777/Artio/projects/Flyway%20Forests/zyrcostdfmch9zjs8exw.jpg",
+        "images": ["https://res.cloudinary.com/djfnazn3y/image/upload/v1715334781/Artio/projects/Avahoula/efrccgn6nnnjxireqdw6.jpg", "https://res.cloudinary.com/djfnazn3y/image/upload/v1715334781/Artio/projects/Avahoula/jomy4ydj43f68zkkdau1.jpg", "https://res.cloudinary.com/djfnazn3y/image/upload/v1715334781/Artio/projects/Avahoula/zbykbyutbec5g32wjjsk.jpg", "https://res.cloudinary.com/djfnazn3y/image/upload/v1715334781/Artio/projects/Avahoula/gyjtq1khl4gdlaslqlsc.jpg"],
         "goal": 2000000,
         "location": {
             "type": "Point",
             "coordinates": [34.08177403103703, -90.88462859713114]
         },
-        "owner": "",
-        "collaborators": [""]
+        "owner": "663e00b0759f8b986ac2c8fe",
+        "collaborators": ["663e00b0759f8b986ac2c905", "663e00b0759f8b986ac2c902", "663e00b0759f8b986ac2c903"],
+        "investors": ["663e00b0759f8b986ac2c907", "663e00b0759f8b986ac2c90d"]
     },
     {
         "name": "Avoided Planned Deforestation",
@@ -91,15 +96,16 @@
         "additionalDetails": "At its heart, Borneo Peatlands aims to avoid the deforestation, degradation, and drainage of a vast area of peat swamp forest. By obtaining full legal control of the forest, the project prevented an industrial acacia plantation company from converting the area. This legal control is immensely important because the interior forests of the peatlands have increasingly been targeted for commercial exploitation. Prior to this project, the government granted licenses to a number of companies to log the forests irrespective of people’s claims to the land.",
         "placeName": "Borneo Peatlands",
         "country": "Indonesia",
-        "coverImg": "",
-        "images": [""],
+        "coverImg": "https://res.cloudinary.com/djfnazn3y/image/upload/v1715334782/Artio/projects/Borneo%20Peatlands/jdshjc3alxcepek6fpfo.webp",
+        "images": ["https://res.cloudinary.com/djfnazn3y/image/upload/v1715334782/Artio/projects/Borneo%20Peatlands/jdshjc3alxcepek6fpfo.webp", "https://res.cloudinary.com/djfnazn3y/image/upload/v1715334782/Artio/projects/Borneo%20Peatlands/lzxeod0nf9ns9lo62hgc.webp", "https://res.cloudinary.com/djfnazn3y/image/upload/v1715334782/Artio/projects/Borneo%20Peatlands/w3gnm7plmrtrhogctbzq.webp", "https://res.cloudinary.com/djfnazn3y/image/upload/v1715334782/Artio/projects/Borneo%20Peatlands/w9zfepddiicuaqxyezye.webp"],
         "goal": 3000000,
         "location": {
             "type": "Point",
             "coordinates": [1.0726890127361812, 114.55466496529404]
         },
-        "owner": "",
-        "collaborators": [""]
+        "owner": "663e00b0759f8b986ac2c8fe",
+        "collaborators": ["663e00b0759f8b986ac2c905", "663e00b0759f8b986ac2c902"],
+        "investors": ["663e00b0759f8b986ac2c907", "663e00b0759f8b986ac2c90d"]
     },
     {
         "name": "Using carbon revenues to build an alternative to forest conversion",
@@ -108,15 +114,16 @@
         "additionalDetails": "Indonesia is losing over 2.5M hectares of forest cover annually often due to clearing for agricultural use. This is an area roughly equivalent to the size of Belgium. In the absence of this project, palm oil companies would convert the area and, consequently, 14 local forest communities along the eastern edge of the reserve would face the threat of losing their land. The project recognizes that local community involvement is necessary to launch and sustain a new mechanism for valuing forests, so local communities have been integral to the planning and development of various initiatives.",
         "placeName": "Central Kalimantan Peatlands",
         "country": "Indonesia",
-        "coverImg": "",
-        "images": [""],
+        "coverImg": "https://res.cloudinary.com/djfnazn3y/image/upload/v1715334782/Artio/projects/CENTRAL%20KALIMANTAN%20PEATLANDS/usrf2a9zgfejeatgsc2a.jpg",
+        "images": ["https://res.cloudinary.com/djfnazn3y/image/upload/v1715334783/Artio/projects/CENTRAL%20KALIMANTAN%20PEATLANDS/listxqxwuizpfroomnnv.webp", "https://res.cloudinary.com/djfnazn3y/image/upload/v1715334783/Artio/projects/CENTRAL%20KALIMANTAN%20PEATLANDS/d2wxxsnbdh6dxvzeltgr.webp", "https://res.cloudinary.com/djfnazn3y/image/upload/v1715334782/Artio/projects/CENTRAL%20KALIMANTAN%20PEATLANDS/utibkowyyft08gfvvy4j.webp", "https://res.cloudinary.com/djfnazn3y/image/upload/v1715334782/Artio/projects/CENTRAL%20KALIMANTAN%20PEATLANDS/lu0wuairplldiefqpddo.webp"],
         "goal": 4500000,
         "location": {
             "type": "Point",
             "coordinates": [-1.5146300507281754, 113.37037845237782]
         },
-        "owner": "",
-        "collaborators": [""]
+        "owner": "663e00b0759f8b986ac2c8fd",
+        "collaborators": ["663e00b0759f8b986ac2c901", "663e00b0759f8b986ac2c902", "663e00b0759f8b986ac2c8ff"],
+        "investors": ["663e00b0759f8b986ac2c907", "663e00b0759f8b986ac2c90d"]
     },
     {
         "name": "Protecting one of Rondônia’s few remaining private forests through sustainable management",
@@ -125,15 +132,16 @@
         "additionalDetails": "Manoa farm’s first sustainable management plan was established in 1997. They’ve spent years improving low-impact harvesting techniques, ultimately becoming a global model for other projects. The rotation is divided into intervals called “cutting cycles” of 30 years to ensure maintenance of mature species, allow the forest to regenerate, and allow species diversity to perpetuate.",
         "placeName": "Manoa",
         "country": "Brazil",
-        "coverImg": "",
-        "images": [""],
+        "coverImg": "https://res.cloudinary.com/djfnazn3y/image/upload/v1715334777/Artio/projects/Manoa/kaaau8ybmaad5m0c1zla.jpg",
+        "images": ["https://res.cloudinary.com/djfnazn3y/image/upload/v1715334778/Artio/projects/Manoa/tdk281t6gb79c0pazzyr.webp", "https://res.cloudinary.com/djfnazn3y/image/upload/v1715334778/Artio/projects/Manoa/lmraknnnjiwsuzl6t5pn.webp", "https://res.cloudinary.com/djfnazn3y/image/upload/v1715334777/Artio/projects/Manoa/pbxc6ir9mcbgcb4smvek.webp", "https://res.cloudinary.com/djfnazn3y/image/upload/v1715334777/Artio/projects/Manoa/jqm8gzcbqudrgik75eea.webp"],
         "goal": 9100000,
         "location": {
             "type": "Point",
             "coordinates": [-2.8312452494338447, -59.94022908874697]
         },
-        "owner": "",
-        "collaborators": [""]
+        "owner": "663e00b0759f8b986ac2c905",
+        "collaborators": ["663e00b0759f8b986ac2c902", "663e00b0759f8b986ac2c8fd", "663e00b0759f8b986ac2c906"],
+        "investors": ["663e00b0759f8b986ac2c907", "663e00b0759f8b986ac2c90d"]
     },
     {
         "name": "Providing clean air, water, and public parks by protecting existing forests",
@@ -142,15 +150,16 @@
         "additionalDetails": "Located near Seattle, Washington in the Pacific Northwest, this area is known for its temperate rainforests that include some of the largest trees in the world, yet is also the most populous county in the state with over 2.23 million residents. Most forests in King County have been heavily cut for timber production and regenerated one or more times since the late 1800s. Additionally, over the past several decades, increased local housing demand has expanded into rural areas putting pressure on nearby forests. By conserving these forests, the project will not only provide net emissions reductions but also protect biodiversity, water quality, and other ecosystem services.",
         "placeName": "King County Parks",
         "country": "United States",
-        "coverImg": "",
-        "images": [""],
+        "coverImg": "https://res.cloudinary.com/djfnazn3y/image/upload/v1715334785/Artio/projects/King%20County%20Parks/hh9lb3xnhgioaggmv2b3.webp",
+        "images": ["https://res.cloudinary.com/djfnazn3y/image/upload/v1715334785/Artio/projects/King%20County%20Parks/acsvop2p7xo4pychzb17.webp", "https://res.cloudinary.com/djfnazn3y/image/upload/v1715334777/Artio/projects/King%20County%20Parks/r3pa26hajxjt5d4c2wbt.webp", "https://res.cloudinary.com/djfnazn3y/image/upload/v1715334777/Artio/projects/King%20County%20Parks/zacykwyxmdcpwelhouse.webp", "https://res.cloudinary.com/djfnazn3y/image/upload/v1715334776/Artio/projects/King%20County%20Parks/mqelapqcxlgwf4tsmsel.webp"],
         "goal": 7000000,
         "location": {
             "type": "Point",
             "coordinates": [47.66837101084193, -122.12233902115028]
         },
-        "owner": "",
-        "collaborators": [""]
+        "owner": "663e00b0759f8b986ac2c8ff",
+        "collaborators": ["663e00b0759f8b986ac2c905", "663e00b0759f8b986ac2c8fd", "663e00b0759f8b986ac2c903"],
+        "investors": ["663e00b0759f8b986ac2c907", "663e00b0759f8b986ac2c90d"]
     },
     {
         "name": "Enabling farmers to reforest their properties and restore the native landscape",
@@ -159,15 +168,16 @@
         "additionalDetails": "The Pratigi Environmental Protection Area (EPA) was established in April 1998 by The Land Conservation Organization of Southern Bahia (OCT), which has been active in the region for over ten years. Financial resources have been provided over the years by various sponsors, partners, and funds of OTC. In 2021, OCT partnered with BRCarbon to handle field work and forest inventory report preparation so that OTC could focus on implementation and management. BRCarbon's mission is to promote reforestation and contribute to climate change mitigation, using financial resources from the carbon market to scale up its activities.",
         "placeName": "Pratigi Biodiversity Corridor",
         "country": "Brazil",
-        "coverImg": "",
-        "images": [""],
+        "coverImg": "https://res.cloudinary.com/djfnazn3y/image/upload/v1715334779/Artio/projects/Pratigi%20Biodiversity%20Corridor/hco6e9hhn6kshzsvjjgw.webp",
+        "images": ["https://res.cloudinary.com/djfnazn3y/image/upload/v1715334779/Artio/projects/Pratigi%20Biodiversity%20Corridor/h9uyovchphbpgsmp0h88.webp", "https://res.cloudinary.com/djfnazn3y/image/upload/v1715334778/Artio/projects/Pratigi%20Biodiversity%20Corridor/mrvae4crxyp8iuzpji9e.webp", "https://res.cloudinary.com/djfnazn3y/image/upload/v1715334778/Artio/projects/Pratigi%20Biodiversity%20Corridor/dlndhjsdoqccos49aimv.webp", "https://res.cloudinary.com/djfnazn3y/image/upload/v1715334778/Artio/projects/Pratigi%20Biodiversity%20Corridor/sylny5yrjwsky5plf4ts.webp"],
         "goal": 10000000,
         "location": {
             "type": "Point",
             "coordinates": [-13.119701872774241, -39.03124550963658]
         },
-        "owner": "",
-        "collaborators": [""]
+        "owner": "663e00b0759f8b986ac2c8ff",
+        "collaborators": ["663e00b0759f8b986ac2c8fd", "663e00b0759f8b986ac2c903", "663e00b0759f8b986ac2c906"],
+        "investors": ["663e00b0759f8b986ac2c907", "663e00b0759f8b986ac2c90d"]
     },
     {
         "name": "Combining conservation and economic development.",
@@ -176,15 +186,16 @@
         "additionalDetails": "Indus Delta Capital, alongside the Government of Sindh, leads the charge in protecting, restoring, and sustainably managing the natural resources of the Indus Delta Region. Through the Delta Blue Carbon – Phase- 1 (DBC-1) initiative, they forged a powerful public-private partnership, facilitated by the Sindh Forest and Wildlife Department. Since its launch in 2015, the project has remained steadfast in its commitment to safeguarding this vital ecosystem.",
         "placeName": "Delta Mangroves",
         "country": "Pakistan",
-        "coverImg": "",
-        "images": [""],
+        "coverImg": "https://res.cloudinary.com/djfnazn3y/image/upload/v1715334776/Artio/projects/Delta%20Mangroves/qc01vom8fxsvj8forv9l.webp",
+        "images": ["https://res.cloudinary.com/djfnazn3y/image/upload/v1715334776/Artio/projects/Delta%20Mangroves/eunmq85qvkxfimx4s3ig.webp", "https://res.cloudinary.com/djfnazn3y/image/upload/v1715334785/Artio/projects/Delta%20Mangroves/etaux13vipelaozvvu4c.webp", "https://res.cloudinary.com/djfnazn3y/image/upload/v1715334776/Artio/projects/Delta%20Mangroves/pswz4svdvrk4itmjhqyb.webp", "https://res.cloudinary.com/djfnazn3y/image/upload/v1715334776/Artio/projects/Delta%20Mangroves/gknypsbzdat4xxxy1rl6.webp"],
         "goal": 2500000,
         "location": {
             "type": "Point",
             "coordinates": [24.186546119116645, 67.5913927105755]
         },
-        "owner": "",
-        "collaborators": [""]
+        "owner": "663e00b0759f8b986ac2c8ff",
+        "collaborators": ["663e00b0759f8b986ac2c8fd", "663e00b0759f8b986ac2c903"],
+        "investors": ["663e00b0759f8b986ac2c907", "663e00b0759f8b986ac2c90d"]
     },
     {
         "name": "Transforming barren land into forests to support farming activities, improve soil health, and increase water.",
@@ -193,15 +204,16 @@
         "additionalDetails": "The project began tree planting on July 15, 2008, across 13 sites in the state of Uttar Pradesh, totaling 189 hectares of land restored. They were either “usar” lands, areas adversely affected by high salinity, or ravines near waterways where topsoil had been washed away. Both types of land need dedicated efforts to become fertile again.",
         "placeName": "Uttar Pradesh Farmer Cooperatives",
         "country": "India",
-        "coverImg": "",
-        "images": [""],
+        "coverImg": "https://res.cloudinary.com/djfnazn3y/image/upload/v1715334779/Artio/projects/Uttar%20Pradesh%20Farmer%20Cooperatives/xzf0qxprrasnoh8shy20.webp",
+        "images": ["https://res.cloudinary.com/djfnazn3y/image/upload/v1715334780/Artio/projects/Uttar%20Pradesh%20Farmer%20Cooperatives/k3f1edk55hs2x7dsolll.webp", "https://res.cloudinary.com/djfnazn3y/image/upload/v1715334780/Artio/projects/Uttar%20Pradesh%20Farmer%20Cooperatives/mbabrezhtzwzovaofzfq.webp", "https://res.cloudinary.com/djfnazn3y/image/upload/v1715334780/Artio/projects/Uttar%20Pradesh%20Farmer%20Cooperatives/erjnkbf5hnyj2xforipx.webp", "https://res.cloudinary.com/djfnazn3y/image/upload/v1715334780/Artio/projects/Uttar%20Pradesh%20Farmer%20Cooperatives/cpfy71akehq28ene37te.webp"],
         "goal": 1300000,
         "location": {
             "type": "Point",
             "coordinates": [27.752941489103897, 78.26582164387435]
         },
-        "owner": "",
-        "collaborators": [""]
+        "owner": "663e00b0759f8b986ac2c903",
+        "collaborators": ["663e00b0759f8b986ac2c8ff", "663e00b0759f8b986ac2c906"],
+        "investors": ["663e00b0759f8b986ac2c907", "663e00b0759f8b986ac2c90d"]
     },
     {
         "name": "Fostering sustainable development in one of Colombia’s poorest & most conflict-ridden areas",
@@ -210,15 +222,16 @@
         "additionalDetails": "As a whole, the people in this region are in the process of recovering their lands after decades of violence and internal displacement. Loggers are still exploiting the region’s wealth of natural resources and residents’ lives are under imminent threat due to conflict as well as this external pressure to exploit the land. Locals formed a Community Council that is self-governing with its own customs, traditions, and Annual Operating Plan protected by the constitution in order to create this project and actively direct how revenues are used.",
         "placeName": "Chocó-Darién Bioregion",
         "country": "Colombia",
-        "coverImg": "",
-        "images": [""],
+        "coverImg": "https://res.cloudinary.com/djfnazn3y/image/upload/v1715334783/Artio/projects/Choc%C3%B3-Dari%C3%A9n%20Bioregion/bv3zlsgdzfg3fxqxdqto.webp",
+        "images": ["https://res.cloudinary.com/djfnazn3y/image/upload/v1715334783/Artio/projects/Choc%C3%B3-Dari%C3%A9n%20Bioregion/qvnsb8rhz3zrynlz5hke.webp", "https://res.cloudinary.com/djfnazn3y/image/upload/v1715334783/Artio/projects/Choc%C3%B3-Dari%C3%A9n%20Bioregion/yu0xglapsfqz8pvdyd4w.webp", "https://res.cloudinary.com/djfnazn3y/image/upload/v1715334783/Artio/projects/Choc%C3%B3-Dari%C3%A9n%20Bioregion/my18kgb8ipyg00fbnv5d.webp", "https://res.cloudinary.com/djfnazn3y/image/upload/v1715334783/Artio/projects/Choc%C3%B3-Dari%C3%A9n%20Bioregion/uuqi0lvckw5suysurwdm.webp"],
         "goal": 6000100,
         "location": {
             "type": "Point",
             "coordinates": [6.351146835738287, -76.84680592625736]
         },
-        "owner": "",
-        "collaborators": [""]
+        "owner": "663e00b0759f8b986ac2c8fd",
+        "collaborators": ["663e00b0759f8b986ac2c901", "663e00b0759f8b986ac2c902", "663e00b0759f8b986ac2c900"],
+        "investors": ["663e00b0759f8b986ac2c907", "663e00b0759f8b986ac2c90d"]
     },
     {
         "name": "Supporting sustainable forest management in an extremely remote area",
@@ -227,15 +240,16 @@
         "additionalDetails": "Prior to the project’s start, Pacajá’s Sustainable Forest Management Plan was causing financial losses to the farm. However, the owner, who has held the land since 1979, felt a personal drive to safeguard it from cattle ranching and illegal logging regardless of those challenges. After creating a new and more stringent environmental plan to mitigate damage and protect old growth, a specialized internal team was formed to monitor the farm, and local communities were consulted to initiate alternative revenue streams. By 2020, the farm had received the Cerflor certification (Brazilian Forest Certification Program) signifying commitment to responsible operation.",
         "placeName": "Pacajá Pará",
         "country": "Brazil",
-        "coverImg": "",
-        "images": [""],
+        "coverImg": "https://res.cloudinary.com/djfnazn3y/image/upload/v1715334778/Artio/projects/Pacaj%C3%A1%20Par%C3%A1/r7t3ysgutsjewwrewsor.webp",
+        "images": ["https://res.cloudinary.com/djfnazn3y/image/upload/v1715334778/Artio/projects/Pacaj%C3%A1%20Par%C3%A1/tic2mxrvjqdgj51fbftr.webp", "https://res.cloudinary.com/djfnazn3y/image/upload/v1715334778/Artio/projects/Pacaj%C3%A1%20Par%C3%A1/tmeekxwbhqfvwng5zfmt.webp", "https://res.cloudinary.com/djfnazn3y/image/upload/v1715334778/Artio/projects/Pacaj%C3%A1%20Par%C3%A1/ug14f66h0ztfiachvuyj.webp", "https://res.cloudinary.com/djfnazn3y/image/upload/v1715334778/Artio/projects/Pacaj%C3%A1%20Par%C3%A1/edcc9m1ionxrubhm7qou.webp"],
         "goal": 0,
         "location": {
             "type": "Point",
             "coordinates": [-3.270250938448265, -50.53644158173428]
         },
-        "owner": "",
-        "collaborators": [""]
+        "owner": "663e00b0759f8b986ac2c903",
+        "collaborators": ["663e00b0759f8b986ac2c8ff", "663e00b0759f8b986ac2c906"],
+        "investors": ["663e00b0759f8b986ac2c907", "663e00b0759f8b986ac2c90d"]
     }
 
 ]

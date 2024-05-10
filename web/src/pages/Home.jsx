@@ -1,4 +1,3 @@
-import { Button } from '@nextui-org/react'
 import Title from '../components/home/title/title';
 import Subtitle from '../components/home/subtitle/subtitle';
 import TopProjects from '../components/home/top-projects/top-projects';
@@ -12,7 +11,7 @@ function Home() {
       <div className='container mx-auto px-10'>
         <Title />
         <Subtitle />
-        <TopProjects />
+        <TopProjects limit={6} page={0}/>
         <TopUsers />
         <TopCompanies />
       </div>
