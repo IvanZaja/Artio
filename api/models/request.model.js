@@ -1,5 +1,8 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const User = require("../models/user.model");
+const Project = require("../models/project.model");
+
 
 const schema = new Schema (
     {
@@ -14,34 +17,37 @@ const schema = new Schema (
         status: {
             type: String,
             enum: ["Sent", "Rejected", "Accepted"],
-            default:"Sent"
+            default:"Sent",
+            required: true
         },
         owner: {
             type: mongoose.Types.ObjectId,
-            ref: 'User'
+            ref: 'User',
         },
         company: {
             type: mongoose.Types.ObjectId,
-            ref: 'User'
+            ref: 'User',
+            required: true
         },
         project: {
             type: mongoose.Types.ObjectId,
-            ref: 'Project'
+            ref: 'Project',
+            required: true
         }
-
     },
-    { timestamps: true }
+    { 
+        timestamps: true,
+        toJSON: {
+            virtuals: true,
+            transform: (doc, ret) => {
+                ret.id = ret._id;
+                delete ret._id;
+                delete ret.__v;
+                return ret;
+            },
+        },
+    }
 )
-
-    schema.pre('save', function(next) {
-        const company = User.findById(this.company);
-    
-        if (company.role !== 'company') {
-            throw new Error('Company field must be filled with a company');
-        }
-    
-        next();
-    });
 
 const Request = mongoose.model('Request', schema);
 module.exports = Request;

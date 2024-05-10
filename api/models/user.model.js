@@ -66,5 +66,16 @@ schema.virtual('projects', {
     foreignField: 'owner', // El nombre del campo del modelo "Channel"
 })
 
+schema.virtual('requests', {
+    ref: 'Request', // Modelo
+    localField: '_id', // Mi campo que tiene la N
+    foreignField: 'owner', // El nombre del campo del modelo "Channel"
+})
+
+schema.virtual('companyRequests', {
+    ref: 'Request', // Modelo
+    localField: '_id', // Mi campo que tiene la N
+    foreignField: 'company', // El nombre del campo del modelo "Channel"
+})
 const User = mongoose.model('User', schema);
 module.exports = User;

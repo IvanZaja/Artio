@@ -1,6 +1,6 @@
 import {Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, DropdownItem, DropdownTrigger, Dropdown, DropdownMenu, Avatar, NavbarMenuToggle, NavbarMenu, NavbarMenuItem} from "@nextui-org/react";
 import ArtioLogo from "./ArtioLogo";
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import AuthContext from "../../../contexts/auth.context";
 import { NavLink } from "react-router-dom";
 
@@ -9,10 +9,23 @@ const renderNavLinkActive = ({ isActive }) => isActive ? 'nav-link active' : 'na
 function NavBar() {
   const { userLoged, doLogout } = useContext(AuthContext);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isTop, setIsTop] = useState(true);
+
+  useEffect(() => {
+    const scrollListener = () => {
+      setIsTop(window.pageYOffset < 50);
+    };
+
+    window.addEventListener('scroll', scrollListener);
+
+    return () => {
+      window.removeEventListener('scroll', scrollListener);
+    };
+  }, []);
 
     return (
-        <Navbar onMenuOpenChange={setIsMenuOpen} height='6rem' maxWidth='full'>
-          <NavbarContent className="flex justify-between w-full">
+        <Navbar onMenuOpenChange={setIsMenuOpen} height='6rem' maxWidth='full' style={{ backgroundColor: isTop ? 'transparent' : '#ffffffa1' }}>
+          <NavbarContent className="flex justify-between w-full" >
               <NavbarBrand>
                 <ArtioLogo/>
                 <p className="font-bold text-inherit text-3xl">Artio</p>
@@ -72,7 +85,12 @@ function NavBar() {
                   <p className="font-semibold">{userLoged?.email}</p>
                 </DropdownItem>
                 <DropdownItem href={`/MyProfile`}>Profile</DropdownItem>
-                <DropdownItem href="#">Requests</DropdownItem>
+                {userLoged?.role === 'host' && (
+                  <DropdownItem href="/requests">Requests</DropdownItem>
+                )}
+                {userLoged?.role === 'company' && (
+                  <DropdownItem href="/received-requests">Requests</DropdownItem>
+                )}
                 <DropdownItem color="danger" onClick={doLogout}>
                   Log Out
                 </DropdownItem>
@@ -101,7 +119,7 @@ function NavBar() {
                   <Link color="foreground" className="text-3xl mt-5" href="/MyProfile">
                     Profile
                   </Link>
-                  <Link color="foreground" className="text-3xl mt-5" href="#">
+                  <Link color="foreground" className="text-3xl mt-5" href="/requests">
                     Requests
                   </Link>
                   <Link color="danger" className="text-3xl mt-5" onClick={doLogout}>

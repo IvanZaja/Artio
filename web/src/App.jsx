@@ -10,6 +10,9 @@ import CreateProject from './pages/Create-Project';
 import ProjectDetails from './pages/Project-Details';
 import MyProfile from './pages/My-Profile';
 import HostProfile from './pages/HostProfile';
+import CreateRequest from './pages/Create-Request';
+import RequestsHost from './pages/Requests-Host';
+import RequestsCompany from './pages/Requests-Company';
 
 function App() {
 
@@ -27,6 +30,10 @@ function App() {
           <Route path='/projects/:id' element={<ProjectDetails />} />
           <Route path='/MyProfile' element={<MyProfile />} />
           <Route path='/user/:id' element={<HostProfile />} />
+          <Route path='/create-request' element={<CreateRequest />} />
+          <Route path='/requests' element={<RequestsHost />} />
+          <Route path='/received-requests' element={<RequestsCompany />} />
+
         </Routes>
       </main>
     </>

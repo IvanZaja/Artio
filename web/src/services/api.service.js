@@ -40,6 +40,14 @@ export function createProject(data) {
     return http.post('/projects', data)
 }
 
+export function updateRequest(requestId, data) {
+    return http.update(`/requests/${requestId}`, data)
+}
+
+export function createRequest(data) {
+    return http.post('/requests', data)
+}
+
 export function login(data) {
     return http.post('/login', data).then((response) => {
         localStorage.setItem("token", response.data.accessToken);
@@ -49,7 +57,7 @@ export function login(data) {
 }
 
 export function getProfile(userId = 'me') {
-    return http.get(`/user/${userId}`);
+    return http.get(`/users/${userId}`);
 }
 
 export function getProjects(params) {
@@ -65,5 +73,5 @@ export function logout() {
 }
 
 export function getUsers(users) {
-    return http.get(`/user`, { users });
+    return http.get(`/users`, { users });
 }

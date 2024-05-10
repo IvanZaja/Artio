@@ -5,6 +5,7 @@ import TopProjects from '../components/home/top-projects/top-projects';
 import TopUsers from '../components/home/top-users/TopUsers';
 import TopCompanies from '../components/home/top-companies/TopCompanies';
 
+
 function Home() {
   return (
     <>

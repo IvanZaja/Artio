@@ -5,20 +5,20 @@ import { Link } from "react-router-dom"
 import { CheckIcon } from "../components/icons/CheckIcon"
 
 function MyProfile() {
-    const { user } = useContext(AuthContext)
+    const { userLoged } = useContext(AuthContext)
 
   return (
     <div className="flex justify-between mx-10 mt-12">
         <div className="flex gap-16 w-full">
             <div className="flex flex-col">
-                <Image src={user?.avatar} className="max-w-80"/>
-                {user?.role === 'company' && (
+                <Image src={userLoged?.avatar} className="max-w-80"/>
+                {userLoged?.role === 'company' && (
                     <h2 className="text-4xl font-semibold mt-6">Your investments</h2>
                 )}
-                {user?.role === 'host' && (
+                {userLoged?.role === 'host' && (
                     <h2 className="text-4xl font-semibold mt-6">Your projects</h2>
                 )}
-                {user?.projects?.map(project => (
+                {userLoged?.projects?.map(project => (
                     <div key={project.id} className="my-4">
                         <Link to={`/projects/${project.id}`} className="flex justify-between items-center">
                             <h2 className="text-2xl font-semibold">{project.name}</h2>
@@ -32,13 +32,13 @@ function MyProfile() {
             </div>
             <div className="flex flex-col w-full">
                 <div className="flex justify-between items-center">
-                    <h1 className="text-6xl font-bold">{user?.name}</h1>
-                    <Chip color="success" size="lg" variant="shadow" className="">{user?.role.toUpperCase()}</Chip>
+                    <h1 className="text-6xl font-bold">{userLoged?.name}</h1>
+                    <Chip color="success" size="lg" variant="shadow" className="">{userLoged?.role.toUpperCase()}</Chip>
                 </div>
-                <h2 className="text-xl">{user?.email}</h2>
+                <h2 className="text-xl">{userLoged?.email}</h2>
                 <Divider className="my-6" />
                 <h2 className="text-3xl">Host level:</h2>
-                {user?.role === 'company' && (
+                {userLoged?.role === 'company' && (
                     <div className="mt-6 w-full flex justify-between">
                     <Card className="w-[280px] h-[280px] border-none bg-gradient-to-br from-violet-500 to-fuchsia-500">
                         <CardBody className="justify-center items-center pb-0">
@@ -126,7 +126,7 @@ function MyProfile() {
                     </Card>
                 </div>
                 )}
-                {user?.role === 'host' && (
+                {userLoged?.role === 'host' && (
                     <div className="mt-6 w-full flex justify-between gap-5">
                     <Card className="flex flex-row w-1/2 h-fit border-none bg-gradient-to-br from-violet-500 to-fuchsia-500">
                         <div className="justify-start items-start my-4 mx-4 w-fit">

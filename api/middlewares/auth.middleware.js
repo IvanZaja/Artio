@@ -19,6 +19,24 @@ module.exports.checkAuth = (req, res, next) => {
                 path: 'owner'
             }
           })
+          .populate({
+            path: 'projects', 
+            populate: {
+                path: 'collaborators'
+            }
+          })
+          .populate({
+            path: 'requests', 
+            populate: {
+                path: 'owner'
+            }
+          })
+          .populate({
+            path: 'companyRequests', 
+            populate: {
+                path: 'company'
+            }
+          })
           .then((user) => {
             if (user) {
               req.user = user;
