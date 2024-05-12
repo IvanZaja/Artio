@@ -38,6 +38,10 @@ const schema = new Schema (
             type: Number,
             required: true
         },
+        amountReceived: {
+            type: Number,
+            default: 0,
+        },
         location: {
             type: {
                 type: String,

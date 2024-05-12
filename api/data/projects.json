@@ -227,7 +227,7 @@
         "goal": 6000100,
         "location": {
             "type": "Point",
-            "coordinates": [6.351146835738287, -76.84680592625736]
+            "coordinates": [-6.351146835738287, 76.84680592625736]
         },
         "owner": "663e00b0759f8b986ac2c8fd",
         "collaborators": ["663e00b0759f8b986ac2c901", "663e00b0759f8b986ac2c902", "663e00b0759f8b986ac2c900"],

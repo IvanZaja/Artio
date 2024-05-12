@@ -17,8 +17,9 @@ module.exports.create = (req, res, next) => {
 
 module.exports.update = (req, res, next) => {
     const requestId = req.params.id;
+
     
-    Request.findByIdAndUpdate(requestId, req.body.status)
+    Request.findByIdAndUpdate(requestId, {status: req.body.status})
         .then((request) => {
             if (request) {
                 res.json(request);

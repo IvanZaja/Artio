@@ -41,7 +41,11 @@ export function createProject(data) {
 }
 
 export function updateRequest(requestId, data) {
-    return http.update(`/requests/${requestId}`, data)
+    return http.patch(`/requests/${requestId}`, data)
+}
+
+export function updateAmountReceived(projectId, data) {
+    return http.patch(`/projects/${projectId}`, data)
 }
 
 export function createRequest(data) {
@@ -75,3 +79,4 @@ export function logout() {
 export function getUsers(users) {
     return http.get(`/users`, { users });
 }
+

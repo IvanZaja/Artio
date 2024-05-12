@@ -25,7 +25,7 @@ function TopProjects({ limit, page }) {
       fetch();
     }, [limit, page]);
 
-  useEffect(() => {
+  /*useEffect(() => {
     async function fetch() {
       try {
         const response = await ArtioApi.getProjects();
@@ -36,7 +36,7 @@ function TopProjects({ limit, page }) {
       }
     }
     fetch();
-  }, [])
+  }, [])*/
 
   return (
     <div>

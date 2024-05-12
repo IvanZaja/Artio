@@ -37,14 +37,19 @@ function RequestsList({ status }) {
     const {
       register,
       handleSubmit,
+      setValue,
     } = useForm()
 
-    async function onSubmit(data) {
+    async function onSubmit({ requestId, status, projectId }) {
       try {
-          await updateRequest(request.id, 'Accepted');
-          navigate('/requests')
-      } catch(err) {
-          console.error(err);
+        await updateRequest(requestId, {status})
+        if(status === 'Accepted') {
+          navigate(`/invest/${projectId}`)
+        } else if (status === 'Rejected') {
+          window.location.href = window.location.href;
+        }
+      } catch(error) {
+        console.error(error)
       }
     }
 
@@ -105,20 +110,27 @@ function RequestsList({ status }) {
                   <div key={project.id}>
                     <p>{project.name}</p>
                     <p>{project.goal} €</p>
+                    <form onSubmit={handleSubmit(onSubmit)} className="flex gap-3 my-3 mx-3">
+                      <input {...register("status")} type="hidden" />
+                      <input {...register("requestId", { value: request.id })} type="hidden" />
+                      <input {...register("projectId", { value: project.id })} type="hidden" />
+                      {request.status !== 'Accepted' && (
+                        <Button onClick={() => setValue("status", "Accepted")} type="submit" name="Accepted" color="success">Accept</Button>
+                      )}
+                      {request.status !== 'Rejected' && (
+                        <Button onClick={() => setValue("status", "Rejected")} type="submit" name="Rejected" color="danger">Reject</Button>
+                      )}
+                    </form>
                     <div className="mx-3">
                       {hosts.filter(host => host.id === `${project.owner}`).map((owner) => (
                         <div key={owner.id} className="flex gap-3">
                           <Avatar src={owner.avatar}/>
                           <p>{owner.name}</p>
                         </div>
-                      ))}
+                      ))} 
                     </div>
                   </div>
                 ))}
-              </div>
-              <div className="flex gap-3 my-3 mx-3">
-                <Button color="success">Accept</Button>
-                <Button color="danger">Reject</Button>
               </div>
             </div>
           ))}

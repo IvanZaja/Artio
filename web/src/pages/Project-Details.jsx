@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { getProject } from "../services/api.service";
 import { Button, Chip, CircularProgress, Image, Progress } from "@nextui-org/react";
-import UserItem from "../components/home/top-users/user-item/UserItem";
+
 
 function ProjectDetails() {
     const { id } = useParams();
@@ -32,7 +32,9 @@ function ProjectDetails() {
               <div className="mx-12">
                 <h1 className="text-6xl font-bold text-white mt-10">{project.placeName}</h1>
                 <p className="text-xl font-medium text-white my-10">{project.description}</p>
-                <Button className="mb-10 rounded-full" color="success" size="lg" >Invest in this project</Button>
+                <Link to={`/invest/${project.id}`}>
+                  <Button className="mb-10 rounded-full" color="success" size="lg" >Invest in this project</Button>
+                </Link>
               </div>
             </div>
           </div>

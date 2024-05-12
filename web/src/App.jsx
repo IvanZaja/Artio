@@ -13,28 +13,30 @@ import HostProfile from './pages/HostProfile';
 import CreateRequest from './pages/Create-Request';
 import RequestsHost from './pages/Requests-Host';
 import RequestsCompany from './pages/Requests-Company';
+import SelectQuantity from './pages/SelectQuantity';
+import CheckOut from './pages/CheckOut';
 
 function App() {
-
   return (
     <>
       <NavBar />
       <main className=''>
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/register' element={<Register />} />
-          <Route path='/register-company' element={<RegisterCompany />} />
-          <Route path='/login' element={<Login />} />
-          <Route path='/projects' element={<Projects />} />
-          <Route path='/create-project' element={<CreateProject />} />
-          <Route path='/projects/:id' element={<ProjectDetails />} />
-          <Route path='/MyProfile' element={<MyProfile />} />
-          <Route path='/user/:id' element={<HostProfile />} />
-          <Route path='/create-request' element={<CreateRequest />} />
-          <Route path='/requests' element={<RequestsHost />} />
-          <Route path='/received-requests' element={<RequestsCompany />} />
-
-        </Routes>
+          <Routes>
+              <Route path='/' element={<Home />} />
+              <Route path='/register' element={<Register />} />
+              <Route path='/register-company' element={<RegisterCompany />} />
+              <Route path='/login' element={<Login />} />
+              <Route path='/projects' element={<Projects />} />
+              <Route path='/create-project' element={<CreateProject />} />
+              <Route path='/projects/:id' element={<ProjectDetails />} />
+              <Route path='/MyProfile' element={<MyProfile />} />
+              <Route path='/user/:id' element={<HostProfile />} />
+              <Route path='/create-request' element={<CreateRequest />} />
+              <Route path='/requests' element={<RequestsHost />} />
+              <Route path='/received-requests' element={<RequestsCompany />} />
+              <Route path='/invest/:id' element={<SelectQuantity />} />
+              <Route path='/invest/:id/checkout' element={<CheckOut />} />
+          </Routes>
       </main>
     </>
   )

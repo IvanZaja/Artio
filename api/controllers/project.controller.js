@@ -29,7 +29,8 @@ module.exports.details = (req, res, next) => {
 };
 
 module.exports.list = (req, res, next) => {
-    const { lat, lng, category, limit = 6, page = 0 } = req.query;
+    const { lat, lng, category, limit, page = 0 } = req.query;
+    console.info({limit})
     const criterial = {};
     if (category) criterial.category = category;
 
@@ -48,7 +49,21 @@ module.exports.list = (req, res, next) => {
     Project.find(criterial)
       .sort({ _id: -1 })
       .skip(page * limit)
-      .limit(limit)
+      .limit(limit ?? 0)
       .then((projects) => res.json(projects))
       .catch(next);
   };
+
+module.exports.update = (req, res, next) => {
+  const projectId = req.params.id;
+  
+  Project.findByIdAndUpdate(projectId, {amountReceived: req.body.amountReceived})
+      .then((project) => {
+          if (project) {
+              res.json(project);
+          } else {
+              res.status(404).json({ message: "Project not found" });
+          }
+      })
+      .catch(next);
+};
