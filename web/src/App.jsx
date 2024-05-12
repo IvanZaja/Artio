@@ -15,6 +15,7 @@ import RequestsHost from './pages/Requests-Host';
 import RequestsCompany from './pages/Requests-Company';
 import SelectQuantity from './pages/SelectQuantity';
 import CheckOut from './pages/CheckOut';
+import Payment from './pages/Payment';
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
               <Route path='/received-requests' element={<RequestsCompany />} />
               <Route path='/invest/:id' element={<SelectQuantity />} />
               <Route path='/invest/:id/checkout' element={<CheckOut />} />
+              <Route path='/invest/:id/payment' element={<Payment />} />
           </Routes>
       </main>
     </>

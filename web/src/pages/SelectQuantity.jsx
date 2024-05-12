@@ -3,7 +3,7 @@ import SliderPrice from '../components/invest/SliderPrice'
 import * as ArtioApi from '../services/api.service';
 import { useNavigate, useParams } from 'react-router-dom';
 import { Image } from '@nextui-org/react';
-
+import BreadcrumbsPay from '../components/breadcrumbs/breadcrumbs';
 
 function SelectQuantity() {
 
@@ -27,7 +27,9 @@ function SelectQuantity() {
   }, [id])
 
   return (
-    <div className='flex justify-center'>
+    <div>
+      <BreadcrumbsPay current={'invest'} project={project}/>
+      <div className='flex justify-center'>
         <div className='flex w-[1280px] justify-evenly'>
           <div className='mt-16 w-[500px] flex flex-col justify-between'>
             <p>{project?.placeName}, {project?.country}</p>
@@ -36,7 +38,9 @@ function SelectQuantity() {
           </div>
           <SliderPrice />
         </div>
+      </div>
     </div>
+    
   )
 }
 
