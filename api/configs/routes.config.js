@@ -15,6 +15,8 @@ router.get('/projects/:id', projects.details);
 router.get('/projects', projects.list);
 router.patch('/projects/:id', auth.checkAuth, projects.update);
 
+router.patch('/projects/:id/user', auth.checkAuth, users.updateTokens)
+
 router.post('/requests', auth.checkAuth, requests.create);
 router.patch('/requests/:id', auth.checkAuth, requests.update);
 

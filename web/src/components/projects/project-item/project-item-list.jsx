@@ -1,10 +1,16 @@
-import {Card, CardHeader, CardBody, Image, CardFooter, Button, Chip} from "@nextui-org/react";
+import {Card, Image, CardFooter, Chip} from "@nextui-org/react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { LocationContext } from '../../../contexts/location.context';
 
-function ProjectItem({ project }) {
+
+function ProjectItemList({ project }) {
+
+  const { setLocation } = useContext(LocationContext)
+
   return (
-    <Link to={`/projects/${project.id}`}>
-      <Card isFooterBlurred className="transition ease-in-out hover:-translate-y-1 hover:scale-105 duration-200 w-[370px] h-[450px] col-span-12 mb-5 sm:col-span-5">
+    <Link to={`/projects/${project.id}`} onMouseEnter={() => setLocation(project?.location)}>
+      <Card isFooterBlurred className="transition ease-in-out hover:-translate-y-1 hover:scale-102 duration-200 w-[370px] h-[420px] col-span-12 mb-5 sm:col-span-5">
         <Image
           removeWrapper
           alt="Card example background"
@@ -25,4 +31,4 @@ function ProjectItem({ project }) {
   )
 }
 
-export default ProjectItem;
+export default ProjectItemList;

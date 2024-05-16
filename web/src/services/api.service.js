@@ -48,6 +48,10 @@ export function updateAmountReceived(projectId, data) {
     return http.patch(`/projects/${projectId}`, data)
 }
 
+export function updateTokens(projectId, data) {
+    return http.patch(`/projects/${projectId}/user`, data)
+}
+
 export function createRequest(data) {
     return http.post('/requests', data)
 }

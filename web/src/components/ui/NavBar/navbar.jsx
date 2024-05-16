@@ -2,11 +2,12 @@ import {Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, DropdownItem, Drop
 import ArtioLogo from "./ArtioLogo";
 import { useState, useContext, useEffect } from "react";
 import AuthContext from "../../../contexts/auth.context";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import UserIcon from "../../icons/user-stroke-rounded";
 import Mail01Icon from "../../icons/mail-01-stroke-rounded";
 import Logout01Icon from "../../icons/logout-01-stroke-rounded";
 import InboxIcon from "../../icons/inbox-stroke-rounded";
+import './navbar.css'
 
 
 const renderNavLinkActive = ({ isActive }) => isActive ? 'nav-link active' : 'nav-link';
@@ -15,6 +16,8 @@ function NavBar() {
   const { userLoged, doLogout } = useContext(AuthContext);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isTop, setIsTop] = useState(true);
+  const location = useLocation();
+  const path = location.pathname;
 
   useEffect(() => {
     const scrollListener = () => {
@@ -29,7 +32,7 @@ function NavBar() {
   }, []);
 
     return (
-        <Navbar className="" onMenuOpenChange={setIsMenuOpen} height='6rem' maxWidth='full' style={{ backgroundColor: isTop ? 'transparent' : '#ffffffa1' }}>
+        <Navbar className="" onMenuOpenChange={setIsMenuOpen} height='6rem' maxWidth='full' style={{ backgroundColor: isTop ? 'transparent' : '#dededea5', backdropFilter: 'blur(30px)' }}>
           <NavbarContent className="flex justify-between w-full" >
               <NavbarBrand>
                 <ArtioLogo/>
@@ -42,17 +45,17 @@ function NavBar() {
           </NavbarContent>
           <NavbarContent className="hidden md:flex gap-4" justify="center">
             <NavbarItem>
-              <Link color="foreground" href="/">
+              <Link className={path === '/' ? 'underline underline-offset-8' : ' '} color="foreground" href="/">
                 Home
               </Link>
             </NavbarItem>
             <NavbarItem>
-              <Link color="foreground" href="#">
+              <Link className="" color="foreground" href="#">
                 Our mission
               </Link>
             </NavbarItem>
             <NavbarItem>
-              <Link href="/projects" color="foreground">
+              <Link className={path === '/projects' ? 'underline underline-offset-8' : ' '} href="/projects" color="foreground">
                 Projects
               </Link>
             </NavbarItem>

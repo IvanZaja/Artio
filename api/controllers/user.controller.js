@@ -78,3 +78,24 @@ module.exports.allUsers = (req, res, next) => {
         })
         .catch(next);
 }
+
+module.exports.updateTokens = (req, res, next) => {
+    const userId = req.user.id;
+
+  User.findById(userId)
+    .then((user) => {
+      if (user) {
+        
+          user.tokens = req.body.tokens;
+          user.save()
+            .then((updatedTokens) => {
+              res.json(updatedTokens);
+            })
+            .catch(next);
+        
+      } else {
+        res.status(404).json({ message: "Project not found" });
+      }
+    })
+    .catch(next);
+}

@@ -26,6 +26,12 @@ module.exports.checkAuth = (req, res, next) => {
             }
           })
           .populate({
+            path: 'projectInvestors', 
+            populate: {
+                path: 'investors'
+            }
+          })
+          .populate({
             path: 'requests', 
             populate: {
                 path: 'owner'

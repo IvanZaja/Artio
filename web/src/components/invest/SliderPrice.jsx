@@ -12,7 +12,7 @@ function SliderPrice() {
 
   const { id } = useParams();
   const [project, setProject] = useState();
-  const [tokens, setTokens] = useState(1);
+  const [tokensSetted, setTokens] = useState(1);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -35,14 +35,16 @@ function SliderPrice() {
     setValue,
   } = useForm()
 
-  async function onSubmit({ projectId, amountReceived }) {
+  async function onSubmit({ projectId, amountReceived, tokens }) {
+    console.log(tokens)
     console.log(amountReceived)
     console.log(projectId)
     try {
+      await ArtioApi.updateTokens(projectId, {tokens})
       await updateAmountReceived(projectId, {amountReceived})
       navigate(`/invest/${projectId}/checkout`, {
         state: {
-          tokens
+          tokensSetted
         }
       })
     } catch(error) {
@@ -50,6 +52,7 @@ function SliderPrice() {
     }
   }
   const handleSliderChange = (value) => {
+    console.log(value)
     setTokens(value);
   };
 
@@ -64,7 +67,7 @@ function SliderPrice() {
           <div className="w-full my-6 ">
             <div className="flex justify-between">
               <p>Amount</p>
-              <p>{project?.goal > project?.amountReceived ? tokens : 0} Tokens</p>
+              <p>{project?.goal > project?.amountReceived ? tokensSetted : 0} Tokens</p>
             </div>
             <Slider 
               label=''
@@ -88,17 +91,19 @@ function SliderPrice() {
         </div>
         <div className="w-full my-1 flex justify-between">
           <p>VAT</p>
-          <p>{project?.goal > project?.amountReceived ? ((tokens*50000)*1.21 - (tokens*50000)).toLocaleString('de-DE') : 1.21} €</p>
+          <p>{project?.goal > project?.amountReceived ? ((tokensSetted*50000)*1.21 - (tokensSetted*50000)).toLocaleString('de-DE') : 1.21} €</p>
         </div>
         <div className="w-full mt-1 mb-6 flex justify-between">
           <p>Total</p>
-          <p>{project?.goal > project?.amountReceived ? (((tokens*50000)*1.21) + 1000).toLocaleString('de-DE') : 0} €</p>
+          <p>{project?.goal > project?.amountReceived ? (((tokensSetted*50000)*1.21) + 1000).toLocaleString('de-DE') : 0} €</p>
         </div>
         <Divider/>
         <form onSubmit={handleSubmit(onSubmit)} className="flex w-full gap-3 my-3 mx-3">
           <input {...register("amountReceived")} type="hidden" />
           <input {...register("projectId", { value: id })} className="w-full" type="hidden" />
-          <Button color="primary" isDisabled={project?.goal > project?.amountReceived ? false : true} type='submit' name="amountReceived" onClick={() => setValue("amountReceived", project?.goal > project?.amountReceived ? (project.amountReceived + (((tokens*50000)*1.21) + 1000)) : (project?.amountReceived + 0))} className="rounded-full w-full mt-6 mb-12">{project?.goal > project?.amountReceived ? `Buy ${tokens} tokens` : 'No tokens available'}</Button>
+          <input {...register("tokens", { value: tokensSetted })} className="w-full" type="hidden" />
+
+          <Button color="primary" isDisabled={project?.goal > project?.amountReceived ? false : true} type='submit' name="amountReceived" onClick={() => setValue("amountReceived", project?.goal > project?.amountReceived ? (project.amountReceived + (((tokensSetted*50000)*1.21) + 1000)) : (project?.amountReceived + 0))} className="rounded-full w-full mt-6 mb-12">{project?.goal > project?.amountReceived ? `Buy ${tokensSetted} tokens` : 'No tokens available'}</Button>
         </form>
       </div>
     </Card>

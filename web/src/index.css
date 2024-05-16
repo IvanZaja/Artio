@@ -7,8 +7,13 @@
   scrollbar-width: thin;
   scrollbar-color: #397524 #DFE9EB;
 }*/
-
+ 
 /* Chrome, Edge and Safari */
+
+:root {
+  background-color: #dededea5;
+  height: 100%;
+}
 
 @font-face {
   font-family: Chromatic;

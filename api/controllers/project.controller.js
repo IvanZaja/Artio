@@ -56,14 +56,30 @@ module.exports.list = (req, res, next) => {
 
 module.exports.update = (req, res, next) => {
   const projectId = req.params.id;
-  
-  Project.findByIdAndUpdate(projectId, {amountReceived: req.body.amountReceived})
-      .then((project) => {
-          if (project) {
-              res.json(project);
-          } else {
-              res.status(404).json({ message: "Project not found" });
-          }
-      })
-      .catch(next);
+  const userId = req.user.id;
+
+  Project.findById(projectId)
+    .then((project) => {
+      if (project) {
+        if (project.investors.includes(userId)) {
+          project.amountReceived = req.body.amountReceived;
+          project.save()
+            .then((updatedProject) => {
+              res.json(updatedProject);
+            })
+            .catch(next);
+        } else {
+          project.investors.push(userId);
+          project.amountReceived = req.body.amountReceived;
+          project.save()
+            .then((updatedProject) => {
+              res.json(updatedProject);
+            })
+            .catch(next);
+        }
+      } else {
+        res.status(404).json({ message: "Project not found" });
+      }
+    })
+    .catch(next);
 };

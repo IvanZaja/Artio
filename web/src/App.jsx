@@ -16,16 +16,20 @@ import RequestsCompany from './pages/Requests-Company';
 import SelectQuantity from './pages/SelectQuantity';
 import CheckOut from './pages/CheckOut';
 import Payment from './pages/Payment';
-// import { useState } from 'react';
+import { useState } from 'react';
+import { LocationContext } from './contexts/location.context';
 
 function App() {
 
+  const [location, setLocation] = useState(null);
   //const [ dark, setDark ] = useState(false);
 
   return (
     <>
       <NavBar />
       <main className=''>
+
+      <LocationContext.Provider value={{ location, setLocation }}>
           <Routes>
               <Route path='/' element={<Home />} />
               <Route path='/register' element={<Register />} />
@@ -43,6 +47,7 @@ function App() {
               <Route path='/invest/:id/checkout' element={<CheckOut />} />
               <Route path='/invest/:id/payment' element={<Payment />} />
           </Routes>
+      </LocationContext.Provider>
       </main>
     </>
   )

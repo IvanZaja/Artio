@@ -6,7 +6,7 @@ function Map({ className, center, markers}) {
     useEffect(() => {
         const googleMap = new window.google.maps.Map(mapRef.current, {
             center: center,
-            zoom: 4,
+            zoom: 7,
             disableDefaultUI: true,
             mapTypeId: 'terrain'
         });
