@@ -8,15 +8,13 @@ function BreadcrumbsPay({ current, project }) {
   return (
     <Breadcrumbs
     underline="hover"
-    classNames={{
-      list: "shadow-small",
-    }}
     itemClasses={{
       item: "text-black/60 data-[current=true]:text-black",
       separator: "text-black/40",
     }}
-    variant="bordered"
+    variant="light"
     radius="full"
+    className="shadow-none"
   >
     <BreadcrumbItem href="#shopping-cart">
       <ShoppingCartIcon />

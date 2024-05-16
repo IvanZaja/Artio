@@ -28,11 +28,11 @@ function SelectQuantity() {
 
   return (
     <div>
-      <BreadcrumbsPay current={'invest'} project={project}/>
       <div className='flex justify-center'>
         <div className='flex w-[1280px] justify-evenly'>
-          <div className='mt-16 w-[500px] flex flex-col justify-between'>
-            <p>{project?.placeName}, {project?.country}</p>
+          <div className=' w-[500px] flex flex-col justify-between'>
+            <BreadcrumbsPay className="" current={'invest'} project={project}/>
+            <p className='mt-8'>{project?.placeName}, {project?.country}</p>
             <h1 className='text-3xl font-bold mb-8' style={{ display: '-webkit-box', WebkitLineClamp: '2', WebkitBoxOrient: 'vertical', overflow: 'hidden'}}>{project?.name}</h1>
             <Image className='w-full h-[375px] object-cover' src={project?.coverImg}/>
           </div>

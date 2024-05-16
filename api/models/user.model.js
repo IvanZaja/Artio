@@ -26,6 +26,10 @@ const schema = new Schema(
             enum: ["company", "host"],
             default: "host"
         },
+        tokens: {
+            type: Number,
+            default: 0
+        }
     },
     {
         timestamps: true,

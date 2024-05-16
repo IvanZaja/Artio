@@ -8,6 +8,7 @@ import { updateAmountReceived } from '../services/api.service';
 import BreadcrumbsPay from "../components/breadcrumbs/breadcrumbs";
 import {Accordion, AccordionItem} from "@nextui-org/react";
 import DocForm from "../components/docForm/docForm";
+import PaymentMethod from "../components/payment/method/PaymentMethod";
 
 function CheckOut() {
 
@@ -48,17 +49,57 @@ function CheckOut() {
       console.error(error)
     }
   }
-  const handleSliderChange = (value) => {
-    setTokens(value);
-  };
 
   return (
     <div>
-        <BreadcrumbsPay current={'checkout'} project={project}/>
         <div className='flex justify-center'>
             <div className='flex w-[1280px] justify-evenly'>
-                <div className='mt-8 w-[500px] flex flex-col justify-between'>
-                    <DocForm />
+                <div className='mt-8 w-[500px] flex flex-col'>
+                <BreadcrumbsPay current={'checkout'} project={project}/>
+                <Accordion
+                motionProps={{
+                    variants: {
+                    enter: {
+                        y: 0,
+                        opacity: 1,
+                        height: "auto",
+                        transition: {
+                        height: {
+                            type: "spring",
+                            stiffness: 500,
+                            damping: 30,
+                            duration: 1,
+                        },
+                        opacity: {
+                            easings: "ease",
+                            duration: 1,
+                        },
+                        },
+                    },
+                    exit: {
+                        y: -10,
+                        opacity: 0,
+                        height: 0,
+                        transition: {
+                        height: {
+                            easings: "ease",
+                            duration: 0.25,
+                        },
+                        opacity: {
+                            easings: "ease",
+                            duration: 0.3,
+                        },
+                        },
+                    },
+                    },
+                }}>
+                    <AccordionItem className="mt-4" key="1" aria-label="Accordion 1" title="Certificate">
+                        <DocForm />
+                    </AccordionItem>
+                    <AccordionItem key="2" aria-label="Accordion 1" title="Payment method">
+                        <PaymentMethod />
+                    </AccordionItem>
+                </Accordion>
                 </div>
                 <div>
                     <Card className="flex mt-16 w-[450px] items-center">
@@ -137,13 +178,11 @@ function CheckOut() {
                             </AccordionItem>
                         </Accordion>
                     </div>
-                </Card>
-                <Button color="primary" className="w-full mt-5 rounded-full">GO TO PAYMENT</Button>
+                    </Card>
+                    <Button color="primary" className="w-full mt-5 rounded-full">Pay it!</Button>
                 </div>
-                
             </div>
         </div>
-        
     </div>
     
   )

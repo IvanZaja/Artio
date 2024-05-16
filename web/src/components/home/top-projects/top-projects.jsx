@@ -16,7 +16,11 @@ function TopProjects({ limit, page }) {
           if (limit) query.limit = limit;
           if (page) query.page = page;
           
-          const { data: projects } = await ArtioApi.getProjects(query);
+          const { data: response } = await ArtioApi.getProjects(query)
+          const projects = response
+          .sort((a, b) => b.amountReceived - a.amountReceived)
+          .filter((_,index) => limit ? index < limit : true)
+
           setProjects(projects);
         } catch (error) {
           console.error(error);
@@ -39,17 +43,19 @@ function TopProjects({ limit, page }) {
   }, [])*/
 
   return (
-    <div>
-        <div className="mt-36 flex items-center justify-between">
-            <h2 className="ml-16 text-5xl font-bold">Top projects</h2>
-            <Button className="mr-16 btn-blue rounded-full" variant="bordered">See all projects</Button>
-        </div>
-        <div className="mt-10 gap-3 flex flex-wrap justify-evenly">
-            {projects.map((project) => (
-              <div key={project.id}>
-                  <ProjectItem project={project}/>
-              </div>
-            ))}
+    <div className='w-full flex justify-center my-20'>
+          <div className=' w-[1254px] '>
+            <div className="flex items-center justify-between">
+                <h2 className=" font-bold">Our most funded projects</h2>
+                <Button className="btn-border">See all projects</Button>
+            </div>
+            <div className="mt-10 gap-3 flex flex-wrap justify-between">
+                {projects.map((project) => (
+                  <div key={project.id}>
+                      <ProjectItem project={project}/>
+                  </div>
+                ))}
+            </div>
         </div>
     </div>
   )

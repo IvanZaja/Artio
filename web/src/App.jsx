@@ -16,8 +16,12 @@ import RequestsCompany from './pages/Requests-Company';
 import SelectQuantity from './pages/SelectQuantity';
 import CheckOut from './pages/CheckOut';
 import Payment from './pages/Payment';
+// import { useState } from 'react';
 
 function App() {
+
+  //const [ dark, setDark ] = useState(false);
+
   return (
     <>
       <NavBar />

@@ -76,7 +76,7 @@ export function logout() {
     localStorage.removeItem("token");
 }
 
-export function getUsers(users) {
-    return http.get(`/users`, { users });
+export function getUsers(params) {
+    return http.get(`/users`, { params });
 }
 

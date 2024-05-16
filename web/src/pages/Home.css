@@ -1,0 +1,29 @@
+.animation, .animation_layer {
+	height: 1000px;
+}
+
+.animation_layer {
+	background-size: auto 1038px;
+	width: 100%;
+    background-size: 'cover'
+}
+.animation_layer.parallax {
+	position: fixed;
+}
+
+.animationBG {
+    height: 100%;
+}
+
+#BG {
+    background-image: url('https://res.cloudinary.com/djfnazn3y/image/upload/v1715804214/Artio/bg/flzjdzlgdhl4azfuadiq.png');
+}
+#B1 {
+    background-image: url('https://res.cloudinary.com/djfnazn3y/image/upload/v1715804214/Artio/bg/zv844nhewnnyflb7bxpc.png');
+}
+#B2 {
+    background-image: url('https://res.cloudinary.com/djfnazn3y/image/upload/v1715804214/Artio/bg/umrcrzxemtkhvweqes2q.png');
+}
+#B3 {
+    background-image: url('https://res.cloudinary.com/djfnazn3y/image/upload/v1715804215/Artio/bg/ma3ghzk8ifqfpzzp1kex.png');
+}

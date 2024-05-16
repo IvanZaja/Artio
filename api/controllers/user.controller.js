@@ -64,13 +64,17 @@ module.exports.details = (req, res, next) => {
 };
 
 module.exports.allUsers = (req, res, next) => {
+    const { limit } = req.query;
+    console.info({limit})
+
     User.find()
-        .then((users) => {
+    .limit(limit ?? 0)
+    .then((users) => {
             if (users) {
                 res.json(users);
-                } else {
+            } else {
                 res.status(404).json({ message: "User not found" });
-                }
+            }
         })
         .catch(next);
 }

@@ -45,7 +45,6 @@ function DocForm() {
       };
   return (
     <div>
-        <h1 className='text-3xl font-semibold'>Certificate</h1>
         <p className='mb-3'>Data to generate your certificate</p>
         <div className='flex gap-3 mb-3'>
             <Input type="text" name="name" onChange={handleChange} label="Name" />

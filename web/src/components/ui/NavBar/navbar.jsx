@@ -3,6 +3,11 @@ import ArtioLogo from "./ArtioLogo";
 import { useState, useContext, useEffect } from "react";
 import AuthContext from "../../../contexts/auth.context";
 import { NavLink } from "react-router-dom";
+import UserIcon from "../../icons/user-stroke-rounded";
+import Mail01Icon from "../../icons/mail-01-stroke-rounded";
+import Logout01Icon from "../../icons/logout-01-stroke-rounded";
+import InboxIcon from "../../icons/inbox-stroke-rounded";
+
 
 const renderNavLinkActive = ({ isActive }) => isActive ? 'nav-link active' : 'nav-link';
 
@@ -24,7 +29,7 @@ function NavBar() {
   }, []);
 
     return (
-        <Navbar onMenuOpenChange={setIsMenuOpen} height='6rem' maxWidth='full' style={{ backgroundColor: isTop ? 'transparent' : '#ffffffa1' }}>
+        <Navbar className="" onMenuOpenChange={setIsMenuOpen} height='6rem' maxWidth='full' style={{ backgroundColor: isTop ? 'transparent' : '#ffffffa1' }}>
           <NavbarContent className="flex justify-between w-full" >
               <NavbarBrand>
                 <ArtioLogo/>
@@ -81,15 +86,15 @@ function NavBar() {
                   <p className="font-semibold">Signed in as</p>
                   <p className="font-semibold">{userLoged?.email}</p>
                 </DropdownItem>
-                <DropdownItem href={`/MyProfile`}>Profile</DropdownItem>
+                <DropdownItem href={`/MyProfile`}><div className="flex items-center gap-3"><UserIcon /> Profile</div></DropdownItem>
                 {userLoged?.role === 'host' && (
-                  <DropdownItem href="/requests">Requests</DropdownItem>
+                  <DropdownItem href="/requests"><div className="flex items-center gap-3"><InboxIcon /> Requests</div></DropdownItem>
                 )}
                 {userLoged?.role === 'company' && (
-                  <DropdownItem href="/received-requests">Requests</DropdownItem>
+                  <DropdownItem href="/received-requests"><div className="flex items-center gap-3"><InboxIcon /> Requests</div></DropdownItem>
                 )}
                 <DropdownItem color="danger" onClick={doLogout}>
-                  Log Out
+                <div className="flex items-center gap-3"><Logout01Icon /> Log Out</div>
                 </DropdownItem>
               </DropdownMenu>
             </Dropdown>
