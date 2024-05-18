@@ -15,9 +15,9 @@ import RequestsHost from './pages/Requests-Host';
 import RequestsCompany from './pages/Requests-Company';
 import SelectQuantity from './pages/SelectQuantity';
 import CheckOut from './pages/CheckOut';
-import Payment from './pages/Payment';
 import { useState } from 'react';
 import { LocationContext } from './contexts/location.context';
+import Thanks from './pages/Thanks';
 
 function App() {
 
@@ -45,7 +45,7 @@ function App() {
               <Route path='/received-requests' element={<RequestsCompany />} />
               <Route path='/invest/:id' element={<SelectQuantity />} />
               <Route path='/invest/:id/checkout' element={<CheckOut />} />
-              <Route path='/invest/:id/payment' element={<Payment />} />
+              <Route path='/invest/:id/thanks' element={<Thanks />} />
           </Routes>
       </LocationContext.Provider>
       </main>

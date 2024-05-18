@@ -48,8 +48,16 @@ export function updateAmountReceived(projectId, data) {
     return http.patch(`/projects/${projectId}`, data)
 }
 
+export function invest(projectId, data) {
+    return http.post(`/projects/${projectId}/investments`, data)
+}
+
 export function updateTokens(projectId, data) {
     return http.patch(`/projects/${projectId}/user`, data)
+}
+
+export function updateGoal(userId, data) {
+    return http.patch(`/users/${userId}`, data)
 }
 
 export function createRequest(data) {

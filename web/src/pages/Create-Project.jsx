@@ -39,20 +39,20 @@ function CreateProject() {
     },[])
 
   // HANDLE SUBMIT
-      const {
-          register,
-          handleSubmit,
-          formState: { errors },
+        const {
+            register,
+            handleSubmit,
+            formState: { errors },
         } = useForm()
-  
-        async function onSubmit(data) {
-          try {
-              await createProject(data);
-              navigate('/projects')
-          } catch(err) {
-              console.error(err);
-          }
+
+    async function onSubmit(data) {
+        try {
+            await createProject(data);
+            navigate('/projects')
+        } catch(err) {
+            console.error(err);
         }
+    }
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className='mt-12'>

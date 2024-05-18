@@ -3,12 +3,14 @@ import AuthContext from "../contexts/auth.context"
 import { Button, Card, CardBody, CardFooter, Chip, CircularProgress, Divider, Image, Input } from "@nextui-org/react"
 import * as ArtioApi from '../services/api.service';
 import {Dropdown, DropdownTrigger, DropdownMenu, DropdownItem} from "@nextui-org/react";
+import Settings02Icon from "../components/icons/settings-02-stroke-rounded";
+import CheckmarkCircle02Icon from "../components/icons/checkmark-circle-02-stroke-rounded";
+import { useForm } from "react-hook-form";
+import DocsTable from "../components/docsTable/DocsTable";
 
 function MyProfile() {
     const { userLoged } = useContext(AuthContext)
     const [projects, setProjects] = useState([]);
-    const [monthGoal, setMonthGoal] = useState(0);
-    const [yearGoal, setYearGoal] = useState(0);
 
     useEffect(() => {
         async function fetch() {
@@ -23,6 +25,25 @@ function MyProfile() {
         fetch();
       }, [userLoged]);
 
+      const {
+        register,
+        handleSubmit,
+        setValue,
+      } = useForm()
+
+      async function onSubmit(data) {
+        try {
+            await ArtioApi.updateGoal(data.userId, data)
+          window.location.href = window.location.href;
+
+        } catch(error) {
+            console.error(error)
+        }
+      }
+
+      const handleChange = (event) => {
+        setValue("monthGoal", event.target.value);
+      };
 
 return (
     <div className="flex justify-between mx-10 mt-12">
@@ -82,7 +103,7 @@ return (
                                                             }}
                                                             value={userLoged?.tokens}
                                                             strokeWidth={4}
-                                                            maxValue={monthGoal}
+                                                            maxValue={userLoged?.monthGoal}
                                                             formatOptions={{style: 'decimal'}}
                                                             showValueLabel={true}
                                                             />
@@ -99,17 +120,19 @@ return (
                                                             </Chip>
                                                             <Dropdown backdrop="blur">
                                                                     <DropdownTrigger className="">
-                                                                            <Button variant="bordered" className="rounded-full text-white  transition ease-in-out hover:bg-white hover:text-black hover:shadow-lg hover:scale-105 duration-200" >
-                                                                                Set goal
+                                                                            <Button variant="bordered" className="mt-1 rounded-full border-1 border-white/30 text-white/90 text-small font-semibold  transition ease-in-out hover:bg-white hover:text-black hover:shadow-lg hover:scale-105 duration-200" >
+                                                                                <Settings02Icon/> Set goal
                                                                             </Button>
                                                                     </DropdownTrigger>
                                                                     <DropdownMenu variant="faded" className="flex " aria-label="Static Actions">
                                                                             <DropdownItem key="tokens" isReadOnly>
-                                                                                    <Input type="number" label='Tokens' /> 
+                                                                                    <Input {...register("monthGoal")} onChange={handleChange} type="number" label='Tokens' /> 
                                                                             </DropdownItem>
-                                                                            <DropdownItem onClick={() => setMonthGoal(document.querySelector('input[type="number"]').value)} className="text-center border-content4-foreground w-[198.4px] mx-2">
-                                                                                    Set goal
+                                                                        
+                                                                            <DropdownItem  className="text-center border-content4-foreground w-[198.4px] mx-2">
+                                                                               <div className="flex gap-2 justify-center items-center"><form onSubmit={handleSubmit(onSubmit)} className=""><input {...register("userId", { value: userLoged?.id} )} className="w-full" type="hidden" /><Button type='submit' onClick={() => setMonthGoal(document.querySelector('input[type="number"]').value)}><CheckmarkCircle02Icon/> Set goal</Button></form></div>
                                                                             </DropdownItem>
+                                                                            
                                                                     </DropdownMenu>
                                                             </Dropdown>
                                                     </CardFooter>
@@ -123,9 +146,9 @@ return (
                                                                     track: "stroke-white/10",
                                                                     value: "text-3xl font-semibold text-white",
                                                             }}
-                                                            value={2378}
+                                                            value={userLoged?.tokens*15}
                                                             strokeWidth={4}
-                                                            maxValue={2378}
+                                                            maxValue={userLoged?.monthGoal*15}
                                                             formatOptions={{style: 'decimal'}}
                                                             showValueLabel={true}
                                                             />
@@ -138,13 +161,15 @@ return (
                                                             }}
                                                             variant="bordered"
                                                             >
-                                                            Total CO² restored
+                                                            CO² restored this month
                                                             </Chip>
                                                     </CardFooter>
                                             </div>
                                     </Card>
                             </div>
                             )}
+                            <DocsTable />
+
                             {userLoged?.role === 'host' && (
                                     <div className="mt-6 w-full flex justify-between gap-5">
                                     <Card className="flex flex-row w-1/2 h-fit border-none bg-gradient-to-br from-violet-500 to-fuchsia-500">

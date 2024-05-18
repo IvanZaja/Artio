@@ -1,16 +1,19 @@
 import {Button, ButtonGroup, Card, Image, Input, Slider} from "@nextui-org/react";
 import * as ArtioApi from '../services/api.service';
-import { useLocation, useNavigate, useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
 import {Divider} from "@nextui-org/divider";
 import { useForm } from "react-hook-form";
 import { updateAmountReceived } from '../services/api.service';
 import BreadcrumbsPay from "../components/breadcrumbs/breadcrumbs";
 import {Accordion, AccordionItem} from "@nextui-org/react";
-import DocForm from "../components/docForm/docForm";
 import PaymentMethod from "../components/payment/method/PaymentMethod";
+import jsPDF from "jspdf";
+import AuthContext from "../contexts/auth.context"
+
 
 function CheckOut() {
+    const { userLoged } = useContext(AuthContext)
 
     const { id } = useParams();
   const [project, setProject] = useState();
@@ -36,19 +39,20 @@ function CheckOut() {
   const {
     register,
     handleSubmit,
-    setValue,
   } = useForm()
 
-  async function onSubmit({ projectId, amountReceived }) {
-    console.log(amountReceived)
-    console.log(projectId)
+  async function onSubmit(data) {
     try {
-      await updateAmountReceived(projectId, {amountReceived})
-      navigate(`/invest/${projectId}/checkout`)
+        await ArtioApi.invest(data.projectId, data)
     } catch(error) {
-      console.error(error)
+        console.error(error)
     }
   }
+
+  const itemClasses = {
+    trigger: "px-2 py-0 my-6 data-[hover=true]:bg-default-100 rounded-lg h-14 flex items-center",
+    indicator: "text-medium",
+  };
 
   return (
     <div>
@@ -56,7 +60,7 @@ function CheckOut() {
             <div className='flex w-[1280px] justify-evenly'>
                 <div className='mt-8 w-[500px] flex flex-col'>
                 <BreadcrumbsPay current={'checkout'} project={project}/>
-                <Accordion
+                <Accordion itemClasses={itemClasses}
                 motionProps={{
                     variants: {
                     enter: {
@@ -94,10 +98,70 @@ function CheckOut() {
                     },
                 }}>
                     <AccordionItem className="mt-4" key="1" aria-label="Accordion 1" title="Certificate">
-                        <DocForm />
+                    <div>
+                        <p className='mb-3'>Data to generate your certificate</p>
+                        <form onSubmit={handleSubmit(onSubmit)} className="">
+                            <div className='flex gap-3 mb-3'>
+                                <Input type="text" name="name" label="Name" 
+                                    {...register("name", { required: true })}
+                                />
+                                <Input type="text" name="surname" label="Surname" 
+                                    {...register("surname", { required: true })}
+                                />
+                            </div>
+                            <div className='flex gap-3 mb-3'>
+                                <Input type="email" name="email" label="Email" 
+                                    {...register("email", { required: true })}
+                                />
+                                <Input type="number" name="phoneNumber" label="Phone number" 
+                                    {...register("phoneNumber", { required: true })}
+                                />
+                            </div>
+                            <Input className='mb-3' type="text" name="companyName" label="Company name" 
+                                {...register("companyName", { required: true })}
+                            />
+                            <div className='flex gap-3 mb-3'>
+                                <Input type="text" name="nif" label="NIF" 
+                                    {...register("nif", { required: true })}
+                                />
+                                <Input type="text" name="vat" label="VAT" 
+                                    {...register("vat", { required: true })}
+                                />
+                            </div>
+                            <Input className='mb-3' name="address" type="text" label="Address" 
+                                {...register("address", { required: true })}
+                            />
+                            <div className='flex gap-3 mb-3'>
+                                <Input type="text" name="postalCode" label="Postal code" 
+                                    {...register("postalCode", { required: true })}
+                                />
+                                <Input type="text" name="city" label="City" 
+                                    {...register("city", { required: true })}
+                                />
+                            </div>
+                            <Input type="text" name="state" label="State" 
+                                {...register("state", { required: true })}
+                            />
+                            <input {...register("projectId", { value: id })} className="w-full" type="hidden" />
+                            <input {...register("tokens", { value: data.tokens })} className="w-full" type="hidden" />
+                            <div className="w-full flex justify-center">
+                                <Button 
+                                    type='submit'
+                                    className="bg-[#81F18E] shadow-lg transition ease-in-out hover:bg-[#50ff64] hover:scale-105 duration-200 rounded-full py-4 w-2/3 my-6"
+                                >
+                                Save</Button>
+                            </div>
+                        </form>
+                    </div>
                     </AccordionItem>
                     <AccordionItem key="2" aria-label="Accordion 1" title="Payment method">
                         <PaymentMethod />
+                        <Link to={`/invest/${project?.id}/thanks`} className="w-full flex justify-center">
+                            <Button 
+                                className="bg-[#81F18E] shadow-lg transition ease-in-out hover:bg-[#50ff64] hover:scale-105 duration-200 rounded-full py-4 my-3 w-2/3"
+                            >
+                            Make the payment</Button>
+                        </Link>
                     </AccordionItem>
                 </Accordion>
                 </div>
@@ -111,7 +175,7 @@ function CheckOut() {
                                 <p className="truncate">{project?.placeName}</p>
                             </div>
                         </div>
-                        <Accordion
+                        <Accordion itemClasses={itemClasses} 
                             motionProps={{
                                 variants: {
                                 enter: {
@@ -179,7 +243,6 @@ function CheckOut() {
                         </Accordion>
                     </div>
                     </Card>
-                    <Button color="primary" className="w-full mt-5 rounded-full">Pay it!</Button>
                 </div>
             </div>
         </div>

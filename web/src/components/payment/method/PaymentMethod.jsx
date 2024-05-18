@@ -5,7 +5,7 @@ function PaymentMethod() {
     const [selected, setSelected] = useState("credit-card");
 
     return (
-        <div className="flex flex-col mt-5 items-center w-full">
+        <div className="flex flex-col items-center w-full">
             <Card className="w-full h-fit bg-transparent border-0 shadow-none">
                 <CardBody className="w-full h-[360px] overflow-hidden">
                     <Tabs

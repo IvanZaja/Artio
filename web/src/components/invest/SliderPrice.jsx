@@ -1,18 +1,22 @@
 import {Button, Card, Input, Slider} from "@nextui-org/react";
 import * as ArtioApi from '../../services/api.service';
 import { useNavigate, useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import {Divider} from "@nextui-org/divider";
 import { useForm } from "react-hook-form";
 import { updateAmountReceived } from '../../services/api.service';
+import AuthContext from "../../contexts/auth.context"
+
 
 
 
 function SliderPrice() {
+  const { userLoged } = useContext(AuthContext)
+
 
   const { id } = useParams();
   const [project, setProject] = useState();
-  const [tokensSetted, setTokens] = useState(1);
+  const [tokensSetted, setTokensSetted] = useState([1]);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -36,6 +40,7 @@ function SliderPrice() {
   } = useForm()
 
   async function onSubmit({ projectId, amountReceived, tokens }) {
+    console.log(tokensSetted)
     console.log(tokens)
     console.log(amountReceived)
     console.log(projectId)
@@ -44,16 +49,17 @@ function SliderPrice() {
       await updateAmountReceived(projectId, {amountReceived})
       navigate(`/invest/${projectId}/checkout`, {
         state: {
-          tokensSetted
+          tokens
         }
       })
     } catch(error) {
       console.error(error)
     }
   }
+
   const handleSliderChange = (value) => {
     console.log(value)
-    setTokens(value);
+    setTokensSetted(value);
   };
 
   return (
@@ -74,7 +80,7 @@ function SliderPrice() {
               size="sm"
               showTooltip={true}
               minValue={project?.goal > project?.amountReceived ? 1 : 0}
-              maxValue={project?.goal > project?.amountReceived ? (project?.goal-project?.amountReceived)/50000 : 0}
+              maxValue={project?.goal > project?.amountReceived ? (project?.goal - project?.amountReceived)/50000 : 0}
               onChange={handleSliderChange}
               className="max-w-md"
             />
@@ -101,7 +107,7 @@ function SliderPrice() {
         <form onSubmit={handleSubmit(onSubmit)} className="flex w-full gap-3 my-3 mx-3">
           <input {...register("amountReceived")} type="hidden" />
           <input {...register("projectId", { value: id })} className="w-full" type="hidden" />
-          <input {...register("tokens", { value: tokensSetted })} className="w-full" type="hidden" />
+          <input {...setValue("tokens", (userLoged?.tokens + tokensSetted[0]))} className="w-full" type="hidden" />
 
           <Button color="primary" isDisabled={project?.goal > project?.amountReceived ? false : true} type='submit' name="amountReceived" onClick={() => setValue("amountReceived", project?.goal > project?.amountReceived ? (project.amountReceived + (((tokensSetted*50000)*1.21) + 1000)) : (project?.amountReceived + 0))} className="rounded-full w-full mt-6 mb-12">{project?.goal > project?.amountReceived ? `Buy ${tokensSetted} tokens` : 'No tokens available'}</Button>
         </form>

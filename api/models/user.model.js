@@ -30,7 +30,13 @@ const schema = new Schema(
             type: Number,
             default: 0
         },
-        
+        docs: {
+            type: [String],
+        },
+        monthGoal: {
+            type: Number,
+            default: 0
+        },
     },
     {
         timestamps: true,

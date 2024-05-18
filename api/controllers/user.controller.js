@@ -2,6 +2,11 @@ const User = require("../models/user.model");
 const mongoose = require("mongoose");
 const jwt = require('jsonwebtoken');
 const Project = require("../models/project.model");
+const {uploadPDF} = require('../configs/storage.config');
+const {generateDocument} = require('../services/generateDocument')
+const fs = require('fs');
+const path = require('path'); 
+
 
 module.exports.create = (req, res, next) => {
     User.create(req.body)
@@ -79,6 +84,36 @@ module.exports.allUsers = (req, res, next) => {
         .catch(next);
 }
 
+module.exports.investments = (req, res, next) => {
+    const data = req.body;
+    const userId = req.user.id;
+
+    const document = generateDocument(data)
+        
+    uploadPDF(document)
+        .then(result => {
+            console.log(result.url)
+            User.findById(userId)
+                .then((user) => {
+                    user.docs.push(result.url)
+                    user.save()
+                        .then((updatedUser) => {
+                            res.json(updatedUser);
+                            fs.unlink(path.join('../api/', document), err => {
+                            if (err) {
+                                console.error("Error deleting file:", err);
+                            }
+                        });
+                        })
+                        .catch(next);
+                })
+                .catch(next);
+        })
+        .catch(next);
+    
+    
+}
+
 module.exports.updateTokens = (req, res, next) => {
     const userId = req.user.id;
 
@@ -94,8 +129,29 @@ module.exports.updateTokens = (req, res, next) => {
             .catch(next);
         
       } else {
-        res.status(404).json({ message: "Project not found" });
+        res.status(404).json({ message: "User not found" });
       }
     })
     .catch(next);
+}
+
+module.exports.setGoal = (req, res, next) => {
+    const userId = req.user.id;
+
+    User.findById(userId)
+        .then((user) => {
+        if (user) {
+            console.log(req.body)
+            user.monthGoal = req.body.monthGoal;
+            user.save()
+            .then((updatedGoal) => {
+              res.json(updatedGoal);
+            })
+            .catch(next);
+            
+        } else {
+            res.status(404).json({ message: "User not found" });
+        }
+        })
+        .catch(next);
 }
