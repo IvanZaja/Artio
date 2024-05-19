@@ -59,7 +59,7 @@ function CheckOut() {
         <div className='flex justify-center'>
             <div className='flex w-[1280px] justify-evenly'>
                 <div className='mt-8 w-[500px] flex flex-col'>
-                <BreadcrumbsPay current={'checkout'} project={project}/>
+                <BreadcrumbsPay current={'payment'} project={project}/>
                 <Accordion itemClasses={itemClasses}
                 motionProps={{
                     variants: {

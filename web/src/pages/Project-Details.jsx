@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { getProject } from "../services/api.service";
-import { Button, Chip, CircularProgress, Image, Progress } from "@nextui-org/react";
+import { Button, Chip, CircularProgress, Image, LinkIcon, Progress } from "@nextui-org/react";
 
 
 function ProjectDetails() {
@@ -91,7 +91,9 @@ function ProjectDetails() {
               <p className="text-white text-xl">{project.placeName}, {project.country}</p>
               <h1 className="text-white text-6xl font-bold my-5">Additional details</h1>
               <p className="text-white text-xl font-medium my-5">{project.additionalDetails}</p>
-              <Button className="my-10 rounded-full" color="success" size="lg">Invest in this project</Button>
+              <Link to={`/invest/${id}`}>
+                <Button className="my-10 rounded-full" color="success" size="lg">Invest in this project</Button>
+              </Link>
             </div>
             <div className="w-1/2 my-20  flex flex-col items-center">
               <CircularProgress
@@ -102,7 +104,7 @@ function ProjectDetails() {
                     value: "text-3xl font-semibold text-white",
                     string: "hola"
                 }}
-                value={1000000}
+                value={project.amountReceived}
                 strokeWidth={4}
                 maxValue={project.goal}
                 formatOptions={{style: 'decimal'}}
