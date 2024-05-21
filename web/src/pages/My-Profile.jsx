@@ -11,6 +11,7 @@ import Download01Icon from "../components/icons/download-01-stroke-rounded";
 import { EyeFilledIcon } from "../components/icons/EyeFilledIcon";
 import { EyeIcon } from "../components/icons/EyeIcon";
 import { Link } from "react-router-dom";
+import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 
 function MyProfile() {
     const { userLoged } = useContext(AuthContext)
@@ -57,7 +58,25 @@ function MyProfile() {
 
 
 return (
-    <div className="flex justify-between mx-10 mt-12">
+<Parallax className='animation' pages={1.4} style={{ top: '0', left: '0'}}>
+      <ParallaxLayer className='z-10' offset={0} speed={0} factor={3}>
+      <div className='animation_layer animationBG top-0 left-0' style={{backgroundColor:'#dededea5', backdropFilter: 'blur(30px)'}}></div>
+      </ParallaxLayer>
+      <ParallaxLayer className='z-0' offset={0} speed={1.5}>
+      <img src={('https://res.cloudinary.com/djfnazn3y/image/upload/v1715786492/Artio/jfpfq0zonjqb3gmoazux.png')} style={{ width: '50%', marginLeft: '70%', marginTop: '200px' }}/>
+      </ParallaxLayer>
+      <ParallaxLayer className='z-0' offset={0} speed={4.5}>
+      <img src={('https://res.cloudinary.com/djfnazn3y/image/upload/v1715786492/Artio/jfpfq0zonjqb3gmoazux.png')} style={{ width: '30%', marginLeft: '-100px', marginTop: '100px' }}/>
+      </ParallaxLayer>
+      <ParallaxLayer className='z-0' offset={0} speed={1.0}>
+      <img src={('https://res.cloudinary.com/djfnazn3y/image/upload/v1715786492/Artio/jfpfq0zonjqb3gmoazux.png')} style={{ width: '10%', marginLeft: '100px', marginTop: '900px' }}/>
+      </ParallaxLayer>
+      <ParallaxLayer className='z-0' offset={0} speed={2.5}>
+      <img src={('https://res.cloudinary.com/djfnazn3y/image/upload/v1715786492/Artio/jfpfq0zonjqb3gmoazux.png')} style={{ width: '10%', marginLeft: '400px', marginTop: '600px' }}/>
+      </ParallaxLayer>
+      <ParallaxLayer className='z-20'  offset={0} speed={0.5}>
+      <div className='mt-[150px]'>
+      <div className="flex justify-between mx-10 mt-12">
             <div className="flex w-full">
                     <div className="w-2/6">
                         <div className="w-full flex justify-center">
@@ -196,10 +215,10 @@ return (
                                         <div className="mt-6 w-full flex justify-between rounded-3xl" style={{backgroundImage: 'url(https://res.cloudinary.com/djfnazn3y/image/upload/v1715334779/Artio/projects/Ucayali%20Community%20Rainforests/zjy00iynaz9uj1wxhfae.webp)', backgroundSize: 'cover'}}>
                                                 <Card className="w-full h-[300px] flex flex-row border-none" style={{backgroundColor:'#4957512b', backdropFilter: 'blur(35px)'}}>
                                                         <div className="w-1/3">
-                                                                <CardBody className="mt-8 mb-3 justify-center items-center pb-0">
+                                                                <CardBody className="mt-4 mb-3 justify-center items-center pb-0">
                                                                         <CircularProgress
                                                                         classNames={{
-                                                                                svg: "w-36 h-36 drop-shadow-md",
+                                                                                svg: "w-48 h-48 drop-shadow-md",
                                                                                 indicator: "stroke-white",
                                                                                 track: "stroke-white/10",
                                                                                 value: "text-3xl font-semibold text-white",
@@ -224,10 +243,10 @@ return (
                                                                 </CardFooter>
                                                         </div>
                                                         <div className="w-1/3 mb-6">
-                                                                <CardBody className="mt-8 mb-3 justify-center items-center pb-0">
+                                                                <CardBody className="mt-4 mb-3 justify-center items-center pb-0">
                                                                         <CircularProgress
                                                                         classNames={{
-                                                                                svg: "w-36 h-36 drop-shadow-md",
+                                                                                svg: "w-48 h-48 drop-shadow-md",
                                                                                 indicator: "stroke-white",
                                                                                 track: "stroke-white/10",
                                                                                 value: "text-small font-semibold text-white",
@@ -252,10 +271,10 @@ return (
                                                                 </CardFooter>
                                                         </div>
                                                         <div className="w-1/3">
-                                                                <CardBody className="mt-8 mb-3 justify-center items-center pb-0">
+                                                                <CardBody className="mt-4 mb-3 justify-center items-center pb-0">
                                                                         <CircularProgress
                                                                         classNames={{
-                                                                                svg: "w-36 h-36 drop-shadow-md",
+                                                                                svg: "w-48 h-48 drop-shadow-md",
                                                                                 indicator: "stroke-white",
                                                                                 track: "stroke-white/10",
                                                                                 value: "text-small font-semibold text-white",
@@ -322,6 +341,10 @@ return (
             
             
     </div>
+      </div>
+      </ParallaxLayer>
+  </Parallax>
+    
 )
 }
 

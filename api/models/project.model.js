@@ -46,13 +46,12 @@ const schema = new Schema (
             type: {
                 type: String,
                 enum: ["Point"],
-                required: true,
                 default:"Point"
             },
             coordinates: {
-                type: [Number],
+                type: [String],
                 required: true,
-                default: [0,0]
+                default: ['0,0']
             },
         },
         country: {

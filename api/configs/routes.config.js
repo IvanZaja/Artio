@@ -6,7 +6,7 @@ const projects = require('../controllers/project.controller');
 const requests = require('../controllers/request.controller');
 const { storage } = require('../configs/storage.config');
 
-router.post('/users', users.create);
+router.post('/users', storage.single('avatarImage'), users.create);
 router.post('/login', users.login);
 router.get('/users/:id', auth.checkAuth, users.details);
 router.get('/users', users.allUsers);

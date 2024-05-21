@@ -44,7 +44,7 @@ function Login() {
                 <div className='w-[600px] flex mx-20 flex-col justify-between'>
                     <form onSubmit={handleSubmit(onSubmit)} className='my-14 mx-14'>
                         <div className="flex flex-col w-full flex-wrap md:flex-nowrap gap-4">
-                            <h1 className='text-4xl font-semibold'>Welcome back!</h1>
+                            <h2 className=''>Welcome back!</h2>
                             <p className='mb-3'>Let&apos;s restore nature.</p>
                             <Input type="email" label="Email" isInvalid={isInvalid || errors.email}
                                 isClearable color={isInvalid || errors.email ? "danger" : ""}
@@ -73,17 +73,15 @@ function Login() {
                                 {...register("password", { required: true })}
                             />
                             {errors.password && <span className="text-tiny text-danger">Password is required</span>}
-
-                            
-                            <Button color="primary" size='lg' className='w-full' type='submit' variant="shadow">
+                            <Button size='lg' className='rounded-full bg-[#81F18E] shadow-lg transition ease-in-out hover:bg-[#50ff64] hover:scale-105 duration-200' type='submit' variant="shadow">
                                 Login
                             </Button>  
                             <p>Don&apos;t have an account? 
-                                <Link to='/register'>
-                                    <Button color="primary" variant="light">
-                                        Sign up
-                                    </Button>  
-                                </Link>
+                            <Link to='/register-role'>
+                                <Button color="primary" className='rounded-full ml-3' variant="light">
+                                    Sign up
+                                </Button>  
+                            </Link>
                             </p>
                         </div>
                     </form>

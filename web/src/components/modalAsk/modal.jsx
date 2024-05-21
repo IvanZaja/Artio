@@ -1,12 +1,13 @@
 import React from "react";
 import {Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure} from "@nextui-org/react";
+import HelpCircleIcon from "../icons/help-circle-stroke-rounded";
 
 export default function ModalAsk() {
   const {isOpen, onOpen, onOpenChange} = useDisclosure();
 
   return (
     <>
-      <Button className="rounded-full px-0" onPress={onOpen}>?</Button>
+      <Button className="rounded-full" onPress={onOpen}><HelpCircleIcon/></Button>
       <Modal isOpen={isOpen} size="4xl" onOpenChange={onOpenChange}>
         <ModalContent>
           {(onClose) => (

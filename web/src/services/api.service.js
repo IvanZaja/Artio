@@ -28,12 +28,11 @@ http.interceptors.response.use(
     }
 );
   
-export function createUSer(data) {
+export function createUser(user) {
     const role = location.pathname === '/register-company' && 'company';
-
-    if (role) data.role = role
-    //{...data, ...(role && { role })}
-    return http.post('/user', data)
+    if (role) user.role = role;
+     
+    return http.post('/users', user)
 }
 
 export function createProject(data) {

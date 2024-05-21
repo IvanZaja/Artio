@@ -50,11 +50,6 @@ function NavBar() {
               </Link>
             </NavbarItem>
             <NavbarItem>
-              <Link className="" color="foreground" href="#">
-                Our mission
-              </Link>
-            </NavbarItem>
-            <NavbarItem>
               <Link className={path === '/projects' ? 'underline underline-offset-8' : ' '} href="/projects" color="foreground">
                 Projects
               </Link>
@@ -64,7 +59,7 @@ function NavBar() {
             {!userLoged && (
               <div className="hidden md:flex gap-4">
               <NavbarItem>
-                <Link className="nav-item" color="foreground"><NavLink className={renderNavLinkActive} to="/register">Register</NavLink></Link>
+                <Link className="nav-item" color="foreground"><NavLink className={renderNavLinkActive} to="/register-role">Register</NavLink></Link>
               </NavbarItem>
               <NavbarItem>
                 <Link className="nav-item" color="foreground"><NavLink className={renderNavLinkActive} to="/Login">Login</NavLink></Link>
@@ -112,9 +107,6 @@ function NavBar() {
                   <Link color="foreground" className="text-3xl mt-5" href="/">
                     Home
                   </Link>
-                  <Link color="foreground" className="text-3xl mt-5" href="#">
-                    Our mission
-                  </Link>
                   <Link color="foreground" className="text-3xl mt-5" href="/projects">
                     Projects
                   </Link>
@@ -137,7 +129,7 @@ function NavBar() {
               <div className="h-full divide-y">
               {!userLoged && (
                 <div className="flex flex-col gap-4 mt-5">
-                  <li className="nav-item text-3xl mt-5"><NavLink className={renderNavLinkActive} to="/register">Register</NavLink></li>
+                  <li className="nav-item text-3xl mt-5"><NavLink className={renderNavLinkActive} to="/register-role">Register</NavLink></li>
                   <li className="nav-item text-3xl mt-5"><NavLink className={renderNavLinkActive} to="/login">Login</NavLink></li>
                 </div>
               )}

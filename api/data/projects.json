@@ -1,5 +1,5 @@
 [
-    {
+    { 
         "name": "Driving sustainable development through Indigenous-led initiatives.",
         "description": "Set in motion in 2010, the Ucayali Community Rainforest initiative is dedicated to preserving the lush forests of seven native communities spanning across the Peruvian Amazon. With 68% of its territory nestled in Ucayali and 32% in Huanuco, two Departments in central Peru, the project faces formidable challenges posed by slash-and-burn agricultural practices and the pervasive threat of illicit logging. Research from the Forest Research Centre (CIFOR) reveals that a staggering 78% to 88% of logging activities within this territory occur outside authorized zones, emphasizing the critical need to safeguard these community forests. Join us in protecting this vital ecosystem, ensuring a legacy for future generations to cherish.",
         "beneficts": ["The project has led to improved livelihoods and increased income for individuals through project activities and the sale of carbon credits.", "Brosimum utile is currently classified as “Least Concern” on the International Union for Conservation of Nature (IUCN) Red List. However, despite its designation, like numerous other tree species in the Amazon, it is under threat from deforestation, habitat degradation, and illegal logging.", "Despite their adaptability and resilience, black-headed spider monkeys face significant threats to their existence. Listed as “Vulnerable” by the International Union for Conservation of Nature (IUCN), they are susceptible to habitat loss due to deforestation, habitat fragmentation, hunting for bushmeat, and the illegal pet trade."],
@@ -15,7 +15,8 @@
         },
         "owner": "663e00b0759f8b986ac2c8fd",
         "collaborators": ["663e00b0759f8b986ac2c900", "663e00b0759f8b986ac2c904", "663e00b0759f8b986ac2c903", "663e00b0759f8b986ac2c906"],
-        "investors": ["663e00b0759f8b986ac2c907", "663e00b0759f8b986ac2c90d"]
+        "investors": ["663e00b0759f8b986ac2c907", "663e00b0759f8b986ac2c90d"],
+        "amountReceived": 200000
     },
     {
         "name": "Building an ecological corridor in a biodiversity hotspot",
@@ -33,7 +34,8 @@
         },
         "owner": "663e00b0759f8b986ac2c904",
         "collaborators": ["663e00b0759f8b986ac2c8fd", "663e00b0759f8b986ac2c8fe", "663e00b0759f8b986ac2c903"],
-        "investors": ["663e00b0759f8b986ac2c907", "663e00b0759f8b986ac2c90d"]
+        "investors": ["663e00b0759f8b986ac2c907", "663e00b0759f8b986ac2c90d"],
+        "amountReceived": 1500000
     },
     {
         "name": "Reconnecting forest fragments",
@@ -51,7 +53,8 @@
         },
         "owner": "663e00b0759f8b986ac2c904",
         "collaborators": ["663e00b0759f8b986ac2c8fd", "663e00b0759f8b986ac2c8fe", "663e00b0759f8b986ac2c903"],
-        "investors": ["663e00b0759f8b986ac2c907", "663e00b0759f8b986ac2c90d"]
+        "investors": ["663e00b0759f8b986ac2c907", "663e00b0759f8b986ac2c90d"],
+        "amountReceived": 3000000
     },
     {
         "name": "The countries' largest floodplain restoration footprint",
@@ -69,7 +72,8 @@
         },
         "owner": "663e00b0759f8b986ac2c8fd",
         "collaborators": ["663e00b0759f8b986ac2c901", "663e00b0759f8b986ac2c902", "663e00b0759f8b986ac2c8fe"],
-        "investors": ["663e00b0759f8b986ac2c907", "663e00b0759f8b986ac2c90d"]
+        "investors": ["663e00b0759f8b986ac2c907", "663e00b0759f8b986ac2c90d"],
+        "amountReceived": 2030010
     },
     {
         "name": "Collaborating with local landowners",
@@ -87,7 +91,8 @@
         },
         "owner": "663e00b0759f8b986ac2c8fe",
         "collaborators": ["663e00b0759f8b986ac2c905", "663e00b0759f8b986ac2c902", "663e00b0759f8b986ac2c903"],
-        "investors": ["663e00b0759f8b986ac2c907", "663e00b0759f8b986ac2c90d"]
+        "investors": ["663e00b0759f8b986ac2c907", "663e00b0759f8b986ac2c90d"],
+        "amountReceived": 1200000
     },
     {
         "name": "Avoided Planned Deforestation",
@@ -105,7 +110,8 @@
         },
         "owner": "663e00b0759f8b986ac2c8fe",
         "collaborators": ["663e00b0759f8b986ac2c905", "663e00b0759f8b986ac2c902"],
-        "investors": ["663e00b0759f8b986ac2c907", "663e00b0759f8b986ac2c90d"]
+        "investors": ["663e00b0759f8b986ac2c907", "663e00b0759f8b986ac2c90d"],
+        "amountReceived": 2340890
     },
     {
         "name": "Using carbon revenues to build an alternative to forest conversion",
@@ -123,7 +129,8 @@
         },
         "owner": "663e00b0759f8b986ac2c8fd",
         "collaborators": ["663e00b0759f8b986ac2c901", "663e00b0759f8b986ac2c902", "663e00b0759f8b986ac2c8ff"],
-        "investors": ["663e00b0759f8b986ac2c907", "663e00b0759f8b986ac2c90d"]
+        "investors": ["663e00b0759f8b986ac2c907", "663e00b0759f8b986ac2c90d"],
+        "amountReceived": 4000000
     },
     {
         "name": "Protecting one of Rondônia’s few remaining private forests through sustainable management",
@@ -141,7 +148,8 @@
         },
         "owner": "663e00b0759f8b986ac2c905",
         "collaborators": ["663e00b0759f8b986ac2c902", "663e00b0759f8b986ac2c8fd", "663e00b0759f8b986ac2c906"],
-        "investors": ["663e00b0759f8b986ac2c907", "663e00b0759f8b986ac2c90d"]
+        "investors": ["663e00b0759f8b986ac2c907", "663e00b0759f8b986ac2c90d"],
+        "amountReceived": 120000
     },
     {
         "name": "Providing clean air, water, and public parks by protecting existing forests",
@@ -159,7 +167,8 @@
         },
         "owner": "663e00b0759f8b986ac2c8ff",
         "collaborators": ["663e00b0759f8b986ac2c905", "663e00b0759f8b986ac2c8fd", "663e00b0759f8b986ac2c903"],
-        "investors": ["663e00b0759f8b986ac2c907", "663e00b0759f8b986ac2c90d"]
+        "investors": ["663e00b0759f8b986ac2c907", "663e00b0759f8b986ac2c90d"],
+        "amountReceived": 3009000
     },
     {
         "name": "Enabling farmers to reforest their properties and restore the native landscape",
@@ -177,7 +186,8 @@
         },
         "owner": "663e00b0759f8b986ac2c8ff",
         "collaborators": ["663e00b0759f8b986ac2c8fd", "663e00b0759f8b986ac2c903", "663e00b0759f8b986ac2c906"],
-        "investors": ["663e00b0759f8b986ac2c907", "663e00b0759f8b986ac2c90d"]
+        "investors": ["663e00b0759f8b986ac2c907", "663e00b0759f8b986ac2c90d"],
+        "amountReceived": 2000000
     },
     {
         "name": "Combining conservation and economic development.",
@@ -195,7 +205,8 @@
         },
         "owner": "663e00b0759f8b986ac2c8ff",
         "collaborators": ["663e00b0759f8b986ac2c8fd", "663e00b0759f8b986ac2c903"],
-        "investors": ["663e00b0759f8b986ac2c907", "663e00b0759f8b986ac2c90d"]
+        "investors": ["663e00b0759f8b986ac2c907", "663e00b0759f8b986ac2c90d"],
+        "amountReceived": 1200000
     },
     {
         "name": "Transforming barren land into forests to support farming activities, improve soil health, and increase water.",
@@ -213,7 +224,8 @@
         },
         "owner": "663e00b0759f8b986ac2c903",
         "collaborators": ["663e00b0759f8b986ac2c8ff", "663e00b0759f8b986ac2c906"],
-        "investors": ["663e00b0759f8b986ac2c907", "663e00b0759f8b986ac2c90d"]
+        "investors": ["663e00b0759f8b986ac2c907", "663e00b0759f8b986ac2c90d"],
+        "amountReceived": 300000
     },
     {
         "name": "Fostering sustainable development in one of Colombia’s poorest & most conflict-ridden areas",
@@ -231,7 +243,8 @@
         },
         "owner": "663e00b0759f8b986ac2c8fd",
         "collaborators": ["663e00b0759f8b986ac2c901", "663e00b0759f8b986ac2c902", "663e00b0759f8b986ac2c900"],
-        "investors": ["663e00b0759f8b986ac2c907", "663e00b0759f8b986ac2c90d"]
+        "investors": ["663e00b0759f8b986ac2c907", "663e00b0759f8b986ac2c90d"],
+        "amountReceived": 19000
     },
     {
         "name": "Supporting sustainable forest management in an extremely remote area",
@@ -242,14 +255,15 @@
         "country": "Brazil",
         "coverImg": "https://res.cloudinary.com/djfnazn3y/image/upload/v1715334778/Artio/projects/Pacaj%C3%A1%20Par%C3%A1/r7t3ysgutsjewwrewsor.webp",
         "images": ["https://res.cloudinary.com/djfnazn3y/image/upload/v1715334778/Artio/projects/Pacaj%C3%A1%20Par%C3%A1/tic2mxrvjqdgj51fbftr.webp", "https://res.cloudinary.com/djfnazn3y/image/upload/v1715334778/Artio/projects/Pacaj%C3%A1%20Par%C3%A1/tmeekxwbhqfvwng5zfmt.webp", "https://res.cloudinary.com/djfnazn3y/image/upload/v1715334778/Artio/projects/Pacaj%C3%A1%20Par%C3%A1/ug14f66h0ztfiachvuyj.webp", "https://res.cloudinary.com/djfnazn3y/image/upload/v1715334778/Artio/projects/Pacaj%C3%A1%20Par%C3%A1/edcc9m1ionxrubhm7qou.webp"],
-        "goal": 0,
+        "goal": 5000000,
         "location": {
             "type": "Point",
             "coordinates": [-3.270250938448265, -50.53644158173428]
         },
         "owner": "663e00b0759f8b986ac2c903",
         "collaborators": ["663e00b0759f8b986ac2c8ff", "663e00b0759f8b986ac2c906"],
-        "investors": ["663e00b0759f8b986ac2c907", "663e00b0759f8b986ac2c90d"]
+        "investors": ["663e00b0759f8b986ac2c907", "663e00b0759f8b986ac2c90d"],
+        "amountReceived": 2560000
     }
 
 ]

@@ -1,10 +1,7 @@
 import { Button, Image } from '@nextui-org/react'
-import { useCallback, useRef, useState } from 'react';
-import {useFile} from "../../hooks/file.hook";
+import { useRef, useState } from 'react';
 
-function DragAndDrop({ onChange, onFileChange }) {
-
-    const {setFile} = useFile();
+function DragAndDropCover() {
     const [dragActive, setDragActive] = useState(false);
     const inputRef = useRef(null);
     const [files, setFiles] = useState([]);
@@ -14,7 +11,7 @@ function DragAndDrop({ onChange, onFileChange }) {
       e.preventDefault();
       console.log("File has been added");
       if (e.target.files && e.target.files[0]) {
-        console.log(e.target.files[0]);
+        console.log(e.target.files);
         for (let i = 0; i < e.target.files["length"]; i++) {
           setFiles((prevState) => [...prevState, e.target.files[i]]);
         }
@@ -27,18 +24,15 @@ function DragAndDrop({ onChange, onFileChange }) {
 
       const url = URL.createObjectURL(file);
       setPreviewUrl(url);
-
-      onFileChange(e.target.files);
     }
-
-    const handleFileChange = useCallback(changeEvent => {
-      console.log("[CHILD] passing the file to the parent...");
-      setFile(changeEvent.currentTarget.files[0]);
-    }, [setFile]);
-
-    const handleFormSubmit = useCallback(submitEvent => {
-      submitEvent.preventDefault();
-    }, []);
+  
+    function handleSubmitFile(e) {
+      if (files.length === 0) {
+        // no file has been submitted
+      } else {
+        // write submit logic here
+      }
+    }
   
     function handleDrop(e) {
       e.preventDefault();
@@ -48,9 +42,6 @@ function DragAndDrop({ onChange, onFileChange }) {
         for (let i = 0; i < e.dataTransfer.files["length"]; i++) {
           setFiles((prevState) => [...prevState, e.dataTransfer.files[i]]);
         }
-      }
-      if (onChange) {
-        onChange(files[0]); // Notifica a react-hook-form sobre el cambio
       }
     }
   
@@ -86,9 +77,6 @@ function DragAndDrop({ onChange, onFileChange }) {
 
   return (
     <div className="flex flex-col items-center w-full ">
-    <form onSubmit={handleFormSubmit}>
-
-    </form>
         <div
           onChange={handleChange}
           onClick={openFileExplorer}
@@ -96,9 +84,9 @@ function DragAndDrop({ onChange, onFileChange }) {
           onSubmit={(e) => e.preventDefault()}
           onDrop={handleDrop}
           onDragLeave={handleDragLeave}
-          onDragOver={handleDragOver} className={previewUrl ? 'hidden' : "flex w-80 rounded-xl lg:h-80 lg:w-80 border-2 border-dashed border-gray-400 lg:rounded-full flex-col items-center justify-center "}>
+          onDragOver={handleDragOver} className={previewUrl ? 'hidden' : "flex w-full rounded-xl h-80 border-2 border-dashed border-gray-400 flex-col items-center justify-center "}>
           <UploadCloudIcon className="h-20 w-20 text-gray-500 dark:text-gray-400" />
-          <p className="text-gray-500 dark:text-gray-400 text-center">Drag & Drop your<br/>avatar image or<br/>click here.</p>
+          <p className="text-gray-500 dark:text-gray-400 text-center">Drag & Drop the<br/>cover image or<br/>click here.</p>
         </div>
         <input
           placeholder="fileInput"
@@ -106,13 +94,13 @@ function DragAndDrop({ onChange, onFileChange }) {
           ref={inputRef}
           type="file"
           multiple={false}
-          onChange={handleFileChange}
+          onChange={handleChange}
           accept="image/*"
         />
       <div className="w-full flex items-center justify-center">
         {files.map((file, idx) => (
           <div key={idx} className="flex flex-col items-center">
-          {previewUrl && <Image src={previewUrl} className='rounded-full h-80 w-80 object-cover border-2 border-dashed border-gray-400' alt="Preview" />}
+          {previewUrl && <Image src={previewUrl} className='flex w-full rounded-xl h-80 object-cover border-2 border-dashed border-gray-400' alt="Preview" />}
             <Button
               variant='bordered'
               className="text-red-500 cursor-pointer mt-5 rounded-full transition ease-in-out hover:shadow-lg hover:bg-red-500 hover:text-white hover:scale-105 duration-200"
@@ -149,4 +137,4 @@ function UploadCloudIcon(props) {
       <path d="m16 16-4-4-4 4" />
     </svg>)}
 
-export default DragAndDrop
+export default DragAndDropCover

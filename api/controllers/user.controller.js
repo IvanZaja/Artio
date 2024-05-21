@@ -9,6 +9,10 @@ const path = require('path');
 
 
 module.exports.create = (req, res, next) => {
+    if (req.file) {
+    req.body.avatar = req.file.path;
+    }
+
     User.create(req.body)
         .then((user) => {
             res.json(user);

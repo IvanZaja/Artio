@@ -1,9 +1,6 @@
 import { useEffect, useState } from "react";
 import * as ArtioApi from '../../../services/api.service';
 import ProjectItem from "../../projects/project-item/project-item";
-import { Button } from "@nextui-org/react";
-
-
 
 function TopProjects({ limit, page }) {
 
@@ -45,16 +42,15 @@ function TopProjects({ limit, page }) {
   return (
     <div className='w-full flex justify-center my-20'>
           <div className=' w-[1254px] '>
-            <div className="flex items-center justify-between">
-                <h2 className=" font-bold">Our most funded projects</h2>
-                <Button className="btn-border">See all projects</Button>
+            <div className="flex items-center justify-center">
+                <h2 className="font-bold mx-6 lg:mx-0">Our most funded projects</h2>
             </div>
-            <div className="mt-10 gap-3 flex flex-wrap justify-between">
-                {projects.map((project) => (
-                  <div key={project.id}>
-                      <ProjectItem project={project}/>
-                  </div>
-                ))}
+            <div className="mt-10 gap-3 flex flex-col lg:flex-row justify-between">
+              {projects.map((project) => (
+                <div key={project.id}>
+                    <ProjectItem project={project}/>
+                </div>
+              ))}
             </div>
         </div>
     </div>

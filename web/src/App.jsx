@@ -18,6 +18,7 @@ import CheckOut from './pages/CheckOut';
 import { useState } from 'react';
 import { LocationContext } from './contexts/location.context';
 import Thanks from './pages/Thanks';
+import RegisterRole from './pages/RegisterRole';
 
 function App() {
 
@@ -33,6 +34,7 @@ function App() {
           <Routes>
               <Route path='/' element={<Home />} />
               <Route path='/register' element={<Register />} />
+              <Route path='/register-role' element={<RegisterRole />} />
               <Route path='/register-company' element={<RegisterCompany />} />
               <Route path='/login' element={<Login />} />
               <Route path='/projects' element={<Projects />} />

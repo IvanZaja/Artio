@@ -19,7 +19,7 @@ const storage = new CloudinaryStorage({
             const day = date.getDate();
             const month = date.getMonth() + 1;
             const year = date.getFullYear();
-            return `${day}-${month}-${year}-${req.user.name}`;
+            return `${day}-${month}-${year}`;
         }
     }
 

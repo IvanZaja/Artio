@@ -33,7 +33,7 @@ function ProjectDetails() {
                 <h1 className="text-6xl font-bold text-white mt-10">{project.placeName}</h1>
                 <p className="text-xl font-medium text-white my-10">{project.description}</p>
                 <Link to={`/invest/${project.id}`}>
-                  <Button className="mb-10 rounded-full" color="success" size="lg" >Invest in this project</Button>
+                <Button size='lg' className='mb-10  rounded-full bg-[#81F18E] shadow-lg transition ease-in-out hover:bg-[#50ff64] hover:scale-105 duration-200' type='submit' variant="">Invest in this project</Button>
                 </Link>
               </div>
             </div>
@@ -92,7 +92,7 @@ function ProjectDetails() {
               <h1 className="text-white text-6xl font-bold my-5">Additional details</h1>
               <p className="text-white text-xl font-medium my-5">{project.additionalDetails}</p>
               <Link to={`/invest/${id}`}>
-                <Button className="my-10 rounded-full" color="success" size="lg">Invest in this project</Button>
+              <Button size='lg' className='mb-10  rounded-full bg-[#81F18E] shadow-lg transition ease-in-out hover:bg-[#50ff64] hover:scale-105 duration-200' type='submit' variant="">Invest in this project</Button>
               </Link>
             </div>
             <div className="w-1/2 my-20  flex flex-col items-center">
