@@ -16,8 +16,8 @@ app.use(cors)
 
 //Routes
 
-const router = require('./configs/routes.config');
-app.use('/api', router);
+app.use('/api', require('./configs/routes.config'));
+app.use('/', require('./web'));
 
 //Error handler
 
@@ -30,6 +30,7 @@ app.use((err, req, res, next) => {
 
     res.status(500).json({ message: 'Internal Server Error'})
 });
+
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.info(`App runnning at port ${port}`));
